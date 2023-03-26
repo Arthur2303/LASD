@@ -1,0 +1,69 @@
+$date
+	Sat Mar 25 20:45:59 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$scope module decod $end
+$var wire 4 ! SW [11:8] $end
+$var reg 7 " HEX3 [0:6] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 "
+b0 !
+$end
+#2
+b1111110 "
+b1 !
+#4
+b110000 "
+b10 !
+#6
+b1111001 "
+b11 !
+#8
+b110011 "
+b100 !
+#10
+b1011011 "
+b101 !
+#12
+b1011111 "
+b110 !
+#14
+b1110000 "
+b111 !
+#16
+b1111111 "
+b1000 !
+#18
+b1111011 "
+b1001 !
+#20
+b1110111 "
+b1010 !
+#22
+b11111 "
+b1011 !
+#24
+b1001110 "
+b1100 !
+#26
+b111101 "
+b1101 !
+#28
+b1001111 "
+b1110 !
+#30
+b1000111 "
+b1111 !

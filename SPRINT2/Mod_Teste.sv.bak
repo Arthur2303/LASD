@@ -1,4 +1,6 @@
 `default_nettype none //Comando para desabilitar declaração automática de wire
+`include "./LCD_TEST2.v"
+`include "./LCD_CONTROLLER.v"
 module Mod_Teste (  //Clocks
                     input CLOCK_27, CLOCK_50,
                     //Chaves e Botoes
@@ -36,8 +38,5 @@ LCD_TEST MyLCD (
 
 //---------- modifique a partir daqui --------
 
-	assign HEX0[0:6] = SW[6:0]; // Item 1
-
-    decodificador decod(.SW( SW ), .HEX3( HEX3 )); // Item 2
 
 endmodule
