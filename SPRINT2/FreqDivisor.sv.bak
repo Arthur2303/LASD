@@ -1,0 +1,6 @@
+module FreqDivisor(input logic CLOCK_50,
+		 output logic LEDG);
+		 
+
+
+endmodule

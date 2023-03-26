@@ -1,6 +1,6 @@
 `include ".\decodificador.sv"
 
-module tb();
+module tb_decodificador(); 
     //Inputs
     logic [3:0] SW;
     //Outputs
@@ -8,10 +8,7 @@ module tb();
 
     decodificador decod(.SW( SW ), .HEX3( HEX3 ));
 
-    initial 
-        begin
-            SW = 4'h0;
-        end
+    initial SW = 4'h0;
 
     initial
         begin
