@@ -2,18 +2,31 @@ module Cont_M10(input logic clk, rst,
 				output logic [3:0] cont);
 
 					 
-	logic contador = 0;
 
 	always@(posedge clk)
 		begin
-			if(contador <= 4'd9) begin
-				contador <= contador + 1;
-				cont <= contador;
+			if(rst == 0) begin
+				if(cont < 4'd9) begin
+					cont <= cont + 1;
+				end
+				else begin
+					cont <= 0;
+				end
 			end
-			else begin
-				contador <= 0;
-				cont <= contador;
-			end
+			else cont <= 0;
 		end
 
 endmodule
+
+// module Cont_M10(
+//     input logic  clk,
+//             rst,
+//     output logic [3:0] cont
+// );
+//     always_ff@(posedge clk)begin
+//         if(rst) cont = 0;
+//         else if(cont == 9) cont <=  0;
+//         else                         cont <= cont + 1; 
+//     end
+
+// endmodule

@@ -16,29 +16,19 @@ module tb_Cont_M10();
 
     always #1 clk = ~clk;
 
-    // initial
-    //     begin
-    //         #2 cont = 4'd1;
-    //         #2 cont = 4'd2;
-    //         #2 cont = 4'd3;
-    //         #2 cont = 4'd4;
-    //         #2 cont = 4'd5;
-    //         #2 cont = 4'd6;
-    //         #2 cont = 4'd7;
-    //         #2 cont = 4'd8;
-    //         #2 cont = 4'd9;
-    //         #2 rst = 1;
-    //         #2 cont = 4'd1;
-    //     end
-
-        initial
+    initial
         begin
             $dumpfile("Sprint2.vcd");
             $dumpvars(0, contm10);
         end
 
+    initial 
+        begin
+        #6 rst = 1;
+        #3 rst = 0;
+        end
     initial
-        #20 $finish;
+        #25 $finish;
 
 
 endmodule
