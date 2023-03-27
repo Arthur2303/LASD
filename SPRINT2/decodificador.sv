@@ -26,23 +26,3 @@ module decodificador(input logic [11:8] SW,
 
 
 endmodule
-
-/*
-case(A)
-			4'h1:  HEX[2:1] = 1;
-			4'h2: (HEX[1:0] && HEX[4:3] && HEX[0]) = 1;
-			4'h3: (HEX[3:0] && HEX[6]) = 1;
-			4'h4:  HEX[2:1] = 1;
-			4'h5:  HEX[2:1] = 1;
-			4'h6:  HEX[2:1] = 1;
-			4'h7:  HEX[2:1] = 1;
-			4'h8:  HEX[2:1] = 1;
-			4'h9:  HEX[2:1] = 1;
-			4'hA:  HEX[2:1] = 1;
-			4'hB:  HEX[2:1] = 1;
-			4'hC:  HEX[2:1] = 1;
-			4'hD:  HEX[2:1] = 1;
-			4'hE:  HEX[2:1] = 1;
-			4'hF:  HEX[2:1] = 1;
-			endcase
-*/
