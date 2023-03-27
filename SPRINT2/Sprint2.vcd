@@ -1,5 +1,5 @@
 $date
-	Sat Mar 25 20:45:59 2023
+	Sun Mar 26 23:06:03 2023
 $end
 $version
 	Icarus Verilog
@@ -7,10 +7,12 @@ $end
 $timescale
 	1s
 $end
-$scope module tb $end
-$scope module decod $end
-$var wire 4 ! SW [11:8] $end
-$var reg 7 " HEX3 [0:6] $end
+$scope module tb_Cont_M10 $end
+$scope module contm10 $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var reg 4 # cont [3:0] $end
+$var reg 1 $ contador $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -19,51 +21,68 @@ $dumpall
 $end
 #0
 $dumpvars
-b0 "
-b0 !
+0$
+bx #
+0"
+0!
 $end
+#1
+b1 #
+1$
+1!
 #2
-b1111110 "
-b1 !
+0!
+#3
+b0 #
+0$
+1!
 #4
-b110000 "
-b10 !
+0!
+#5
+b1 #
+1$
+1!
 #6
-b1111001 "
-b11 !
+0!
+#7
+b0 #
+0$
+1!
 #8
-b110011 "
-b100 !
+0!
+#9
+b1 #
+1$
+1!
 #10
-b1011011 "
-b101 !
+0!
+#11
+b0 #
+0$
+1!
 #12
-b1011111 "
-b110 !
+0!
+#13
+b1 #
+1$
+1!
 #14
-b1110000 "
-b111 !
+0!
+#15
+b0 #
+0$
+1!
 #16
-b1111111 "
-b1000 !
+0!
+#17
+b1 #
+1$
+1!
 #18
-b1111011 "
-b1001 !
+0!
+#19
+b0 #
+0$
+1!
 #20
-b1110111 "
-b1010 !
-#22
-b11111 "
-b1011 !
-#24
-b1001110 "
-b1100 !
-#26
-b111101 "
-b1101 !
-#28
-b1001111 "
-b1110 !
-#30
-b1000111 "
-b1111 !
+0!
