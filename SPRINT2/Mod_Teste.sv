@@ -38,6 +38,14 @@ LCD_TEST MyLCD (
 
 	assign HEX0[0:6] = SW[6:0]; // Item 1
 
-    decodificador decod(.SW( SW ), .HEX3( HEX3 )); // Item 2
+    decodificador decod(.SW( SW[11:8]), .HEX3( HEX3[0:6] )); // Item 2
+	 
+	 // Item 4
+	 
+	 FreqDivisor divisor(.CLOCK_50( CLOCK_50 ), .LEDG( LEDG[0] ));
+	 
+	 Cont_M10 counter(.clk( LED[0]), .rst( KEY[1] ), .cont( SW[11:8]));
+	 
+	 decodificador decod(.SW( SW[11:8]), .HEX3( HEX4[0:6] ));
 
 endmodule

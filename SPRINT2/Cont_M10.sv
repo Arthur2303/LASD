@@ -18,15 +18,3 @@ module Cont_M10(input logic clk, rst,
 
 endmodule
 
-// module Cont_M10(
-//     input logic  clk,
-//             rst,
-//     output logic [3:0] cont
-// );
-//     always_ff@(posedge clk)begin
-//         if(rst) cont = 0;
-//         else if(cont == 9) cont <=  0;
-//         else                         cont <= cont + 1; 
-//     end
-
-// endmodule

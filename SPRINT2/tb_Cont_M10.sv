@@ -28,7 +28,7 @@ module tb_Cont_M10();
         #3 rst = 0;
         end
     initial
-        #25 $finish;
+        #35 $finish;
 
 
 endmodule
