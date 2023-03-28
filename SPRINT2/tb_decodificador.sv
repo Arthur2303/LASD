@@ -1,42 +1,45 @@
 `include ".\decodificador.sv"
 
-module tb_decodificador(); 
-    //Inputs
-    logic [3:0] SW;
-    //Outputs
-    logic [0:6] HEX3;
+// testebench by Valmir Ferreira
+module tb;
+    logic [3:0] bincode;
+    logic [6:0] pinoutdisplay7segment;
+    logic [4:0] pass_fail, pass_test;
 
-    decodificador decod(.SW( SW ), .HEX3( HEX3 ));
+    decodificador display7segment(
+        .SW  (            bincode          ),
+        .QQ  (     pinoutdisplay7segment   )
+    );
 
-    initial SW = 4'h0;
-
-    initial
-        begin
-            #2 SW = 4'h1;
-            #2 SW = 4'h2;
-            #2 SW = 4'h3;
-            #2 SW = 4'h4;
-            #2 SW = 4'h5;
-            #2 SW = 4'h6;
-            #2 SW = 4'h7;
-            #2 SW = 4'h8;
-            #2 SW = 4'h9;
-            #2 SW = 4'hA;
-            #2 SW = 4'hB;
-            #2 SW = 4'hC;
-            #2 SW = 4'hD;
-            #2 SW = 4'hE;
-            #2 SW = 4'hF;
+    task expect_output(
+        input [6:0] pinoutdisplay7segment_expect);
+        begin   
+            if(pinoutdisplay7segment == pinoutdisplay7segment_expect)
+                pass_test+=1;
+            else begin
+                pass_fail+=1;
+                $display("%d %b %b",bincode,pinoutdisplay7segment,pinoutdisplay7segment_expect);
+            end
         end
+    endtask
 
-    initial
-        begin
-            $dumpfile("Sprint2.vcd");
-            $dumpvars(0, decod);
-        end
-    
-    initial
-        #30 $finish;
-
-
+    initial begin
+        pass_fail = 0;
+        pass_test = 0;
+        $display("expected  : obtained");
+        $dumpfile("decod_hex2_7seg.vcd");
+        $dumpvars(0,display7segment);
+        bincode = 0; #1expect_output(~7'b1111110);
+        bincode = 1; #1expect_output(~7'b0110000);
+        bincode = 2; #1expect_output(~7'b1101101);
+        bincode = 3; #1expect_output(~7'b1111001);
+        bincode = 4; #1expect_output(~7'b0111011);
+        bincode = 5; #1expect_output(~7'b1011011);
+        bincode = 6; #1expect_output(~7'b1011111);
+        bincode = 7; #1expect_output(~7'b1110000);
+        bincode = 8; #1expect_output(~7'b1111111);
+        bincode = 9; #1expect_output(~7'b1111011);
+        $display("pass : fail");
+        $display("%d    : %d ",pass_test,pass_fail);
+    end
 endmodule

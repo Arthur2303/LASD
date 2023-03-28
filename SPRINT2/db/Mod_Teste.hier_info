@@ -1,17 +1,17 @@
 |Mod_Teste
 CLOCK_27 => ~NO_FANOUT~
-CLOCK_50 => CLOCK_50.IN1
+CLOCK_50 => CLOCK_50.IN2
 KEY[0] => KEY[0].IN1
-KEY[1] => ~NO_FANOUT~
+KEY[1] => KEY[1].IN1
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-SW[0] => HEX0[6].DATAIN
-SW[1] => HEX0[5].DATAIN
-SW[2] => HEX0[4].DATAIN
-SW[3] => HEX0[3].DATAIN
-SW[4] => HEX0[2].DATAIN
-SW[5] => HEX0[1].DATAIN
-SW[6] => HEX0[0].DATAIN
+SW[0] => ~NO_FANOUT~
+SW[1] => ~NO_FANOUT~
+SW[2] => ~NO_FANOUT~
+SW[3] => ~NO_FANOUT~
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
@@ -23,13 +23,13 @@ SW[14] => ~NO_FANOUT~
 SW[15] => ~NO_FANOUT~
 SW[16] => ~NO_FANOUT~
 SW[17] => ~NO_FANOUT~
-HEX0[6] <= SW[0].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[5] <= SW[1].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[4] <= SW[2].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[3] <= SW[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[2] <= SW[4].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[1] <= SW[5].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[0] <= SW[6].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] <= <GND>
+HEX0[5] <= <GND>
+HEX0[4] <= <GND>
+HEX0[3] <= <GND>
+HEX0[2] <= <GND>
+HEX0[1] <= <GND>
+HEX0[0] <= <GND>
 HEX1[6] <= <GND>
 HEX1[5] <= <GND>
 HEX1[4] <= <GND>
@@ -51,13 +51,13 @@ HEX3[3] <= <GND>
 HEX3[2] <= <GND>
 HEX3[1] <= <GND>
 HEX3[0] <= <GND>
-HEX4[6] <= <GND>
-HEX4[5] <= <GND>
-HEX4[4] <= <GND>
-HEX4[3] <= <GND>
-HEX4[2] <= <GND>
-HEX4[1] <= <GND>
-HEX4[0] <= <GND>
+HEX4[6] <= decodificador:decod.QQ
+HEX4[5] <= decodificador:decod.QQ
+HEX4[4] <= decodificador:decod.QQ
+HEX4[3] <= decodificador:decod.QQ
+HEX4[2] <= decodificador:decod.QQ
+HEX4[1] <= decodificador:decod.QQ
+HEX4[0] <= decodificador:decod.QQ
 HEX5[6] <= <GND>
 HEX5[5] <= <GND>
 HEX5[4] <= <GND>
@@ -439,5 +439,66 @@ LCD_DATA[7] <= iDATA[7].DB_MAX_OUTPUT_PORT_TYPE
 LCD_RW <= <GND>
 LCD_EN <= LCD_EN~reg0.DB_MAX_OUTPUT_PORT_TYPE
 LCD_RS <= iRS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mod_Teste|FreqDivisor:divisor
+CLOCK_50 => contador[0].CLK
+CLOCK_50 => contador[1].CLK
+CLOCK_50 => contador[2].CLK
+CLOCK_50 => contador[3].CLK
+CLOCK_50 => contador[4].CLK
+CLOCK_50 => contador[5].CLK
+CLOCK_50 => contador[6].CLK
+CLOCK_50 => contador[7].CLK
+CLOCK_50 => contador[8].CLK
+CLOCK_50 => contador[9].CLK
+CLOCK_50 => contador[10].CLK
+CLOCK_50 => contador[11].CLK
+CLOCK_50 => contador[12].CLK
+CLOCK_50 => contador[13].CLK
+CLOCK_50 => contador[14].CLK
+CLOCK_50 => contador[15].CLK
+CLOCK_50 => contador[16].CLK
+CLOCK_50 => contador[17].CLK
+CLOCK_50 => contador[18].CLK
+CLOCK_50 => contador[19].CLK
+CLOCK_50 => contador[20].CLK
+CLOCK_50 => contador[21].CLK
+CLOCK_50 => contador[22].CLK
+CLOCK_50 => contador[23].CLK
+CLOCK_50 => contador[24].CLK
+CLOCK_50 => contador[25].CLK
+CLOCK_50 => contador[26].CLK
+CLOCK_50 => LEDG~reg0.CLK
+LEDG <= LEDG~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mod_Teste|Cont_M10:counter
+clk => cont[0]~reg0.CLK
+clk => cont[1]~reg0.CLK
+clk => cont[2]~reg0.CLK
+clk => cont[3]~reg0.CLK
+rst => cont.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+rst => cont.OUTPUTSELECT
+cont[0] <= cont[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cont[1] <= cont[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cont[2] <= cont[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+cont[3] <= cont[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mod_Teste|decodificador:decod
+SW[8] => Decoder0.IN3
+SW[9] => Decoder0.IN2
+SW[10] => Decoder0.IN1
+SW[11] => Decoder0.IN0
+QQ[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+QQ[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+QQ[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+QQ[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+QQ[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+QQ[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+QQ[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

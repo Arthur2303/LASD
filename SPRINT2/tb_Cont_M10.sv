@@ -11,7 +11,7 @@ module tb_Cont_M10();
     initial 
         begin
             clk = 0;
-            rst = 0;
+            rst = 1;
         end
 
     always #1 clk = ~clk;
@@ -24,9 +24,10 @@ module tb_Cont_M10();
 
     initial 
         begin
-        #6 rst = 1;
-        #3 rst = 0;
+        #6 rst = 0;
+        #3 rst = 1;
         end
+        
     initial
         #35 $finish;
 

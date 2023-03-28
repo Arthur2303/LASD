@@ -36,16 +36,21 @@ LCD_TEST MyLCD (
 
 //---------- modifique a partir daqui --------
 
-	assign HEX0[0:6] = SW[6:0]; // Item 1
+	//assign HEX0[0:6] = SW[6:0]; // Item 1
 
-    decodificador decod(.SW( SW[11:8]), .HEX3( HEX3[0:6] )); // Item 2
+    //decodificador decod(.SW( SW[11:8]), .HEX3( HEX3[0:6] )); // Item 2
 	 
 	 // Item 4
+	 wire connection1;
+	 wire [3:0] connection2;
 	 
-	 FreqDivisor divisor(.CLOCK_50( CLOCK_50 ), .LEDG( LEDG[0] ));
+	 //assign connection1 = LEDG[0];
+	 //assign connection2 = SW[11:8]; 
 	 
-	 Cont_M10 counter(.clk( LED[0]), .rst( KEY[1] ), .cont( SW[11:8]));
+	 FreqDivisor divisor(.CLOCK_50( CLOCK_50 ), .LEDG( connection1 ));
 	 
-	 decodificador decod(.SW( SW[11:8]), .HEX3( HEX4[0:6] ));
+	 Cont_M10 counter(.clk( connection1), .rst( KEY[1] ), .cont( connection2 ));
+	 
+	 decodificador decod(.SW( connection2 ), .QQ( HEX4[0:6] ));
 
 endmodule

@@ -5,7 +5,7 @@ module Cont_M10(input logic clk, rst,
 
 	always@(posedge clk)
 		begin
-			if(rst == 0) begin
+			if(rst) begin
 				if(cont < 4'd9) begin
 					cont <= cont + 1;
 				end

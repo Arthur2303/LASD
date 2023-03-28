@@ -1,5 +1,5 @@
 module FreqDivisor(input logic CLOCK_50,
-				   output logic LEDG);
+				       output logic LEDG);
 		 
 	// A cada 25MHz inverta a saída
 

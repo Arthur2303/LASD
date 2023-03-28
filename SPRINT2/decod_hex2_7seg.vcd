@@ -1,0 +1,63 @@
+$date
+	Tue Mar 28 14:32:18 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$scope module display7segment $end
+$var wire 7 ! QQ [0:6] $end
+$var wire 4 " SW [11:8] $end
+$var reg 7 # HEX3 [0:6] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1111110 #
+b0 "
+b1 !
+$end
+#1
+b1001111 !
+b110000 #
+b1 "
+#2
+b10010 !
+b1101101 #
+b10 "
+#3
+b110 !
+b1111001 #
+b11 "
+#4
+b1000100 !
+b111011 #
+b100 "
+#5
+b100100 !
+b1011011 #
+b101 "
+#6
+b100000 !
+b1011111 #
+b110 "
+#7
+b1111 !
+b1110000 #
+b111 "
+#8
+b0 !
+b1111111 #
+b1000 "
+#9
+b100 !
+b1111011 #
+b1001 "
+#10
