@@ -1,5 +1,5 @@
 module Cont_M10(input logic clk, rst,
-				output logic [3:0] cont);
+		output logic [3:0] cont);
 
 					 
 
@@ -17,4 +17,3 @@ module Cont_M10(input logic clk, rst,
 		end
 
 endmodule
-
