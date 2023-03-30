@@ -36,7 +36,7 @@ LCD_TEST MyLCD (
 //---------- modifique a partir daqui --------
 
 	// SPRINT2 
-	wire connection1; 
+	wire connection1, connectionDesafio; 
 	wire [3:0] connection2;
 
 	assign HEX0[0:6] = SW[6:0]; // Item 1
@@ -51,8 +51,13 @@ LCD_TEST MyLCD (
 	
 	Cont_M10 counter(.clk(connection1), .rst( KEY[1]), .cont( connection2 ));
 
-	decodificador decod2(.SW( connection2 ), .QQ( HEX4[0:6] )); // Item 2
+	decodificador decod2(.SW( connection2 ), .QQ( HEX4[0:6] )); 
 	
+	// Desafio
+	
+	FreqDivisor #(.BordaDeSubida(4166666)) divisorD(.CLOCK_50( CLOCK_50 ), .LEDG( connectionDesafio ));
+	
+	desafio desafD(.clk( connectionDesafio ), .out( HEX6[0:6] ));
 	
 
 	// SPRINT1
