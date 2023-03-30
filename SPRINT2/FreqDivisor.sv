@@ -1,10 +1,10 @@
 module FreqDivisor(input logic CLOCK_50,
-				       output logic LEDG);
+				    output logic LEDG);
 		 
 	// A cada 25MHz inverta a saída
 
 	parameter BordaDeSubida = 25000000; // Quantidade de bordas de subida
-	logic [26:0]contador = 0; // registrador
+	logic [25:0]contador = 0; // registrador
 
 	always@(posedge CLOCK_50)
 		begin

@@ -33,7 +33,7 @@ module tb;
         bincode = 1; #1expect_output(~7'b0110000);
         bincode = 2; #1expect_output(~7'b1101101);
         bincode = 3; #1expect_output(~7'b1111001);
-        bincode = 4; #1expect_output(~7'b0111011);
+        bincode = 4; #1expect_output(~7'b0110011);
         bincode = 5; #1expect_output(~7'b1011011);
         bincode = 6; #1expect_output(~7'b1011111);
         bincode = 7; #1expect_output(~7'b1110000);
