@@ -37,9 +37,9 @@ LCD_TEST MyLCD (
 
 	// SPRINT3
 
-	RegisterFile #(.N(8)) register(.wd3(   SW[7:0]   ), .wa3( SW[16:14] ), .ra1( SW[13:11] ), .ra2(   SW[10:8]  ), 
-								          .we3(   SW[17]    ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1( w_d0x0[7:0] ), 
-								          .rd2( w_d0x1[7:0] ));
+	RegisterFile #(N = 8) register(.wd3(   SW[7:0]   ), .wa3( SW[16:14] ), .ra1( SW[13:11] ), .ra2(   SW[10:8]  ), 
+								   .we3(   SW[17]    ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1( w_d0x0[7:0] ), 
+								   .rd2( w_d0x1[7:0] ));
 
 
 

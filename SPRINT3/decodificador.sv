@@ -1,4 +1,4 @@
-module decodificador(input logic [11:8] SW,
+module decodificador #(parameter InSize = 4 )(input logic [N-1:0] SW,
 					 output logic [0:6] QQ);
 
 	logic [0:6] HEX3;
@@ -22,7 +22,8 @@ module decodificador(input logic [11:8] SW,
 			4'hC:  HEX3 = 7'b1001110;
 			4'hD:  HEX3 = 7'b0111101;
 			4'hE:  HEX3 = 7'b1001111;
-			4'hF:  HEX3 = 8'b1000111;
+			4'hF:  HEX3 = 7'b1000111;
+			default: HEX3 = 7'b000000;
 			endcase		
 		end
 

@@ -1,9 +1,8 @@
-module RegisterFile #(parameter N = 8)
-        (input  logic [N-1:0] wd3,
-         input  logic [2:0] wa3, ra1, ra2,
-         input  logic we3, clk, rst,
-         output logic [N-1:0] rd1, rd2);
-         // ra1 e ra2 são os seletores do mux, ra1 disponibilizando a saí­da no rd1 e ra2 a no rd2.
+module RegisterFile #(parameter N = 8)(input  logic [N-1:0] wd3,
+           input  logic [2:0] wa3, ra1, ra2,
+           input  logic we3, clk, rst,
+           output logic [N-1:0] rd1, rd2);
+           // ra1 e ra2 são os seletores do mux, ra1 disponibilizando a saída no rd1 e ra2 a no rd2.
 
     // 8 registradores de 8 bits
     logic  [N-1:0] registradores[N-1:0];
@@ -12,10 +11,9 @@ module RegisterFile #(parameter N = 8)
     initial registradores[0] = 0;
 
     // Escrita nos registradores dependendo do clock e reset.
-    always@(posedge clk) // reset assí­ncrono
+    always@(posedge clk, negedge rst) // reset assíncrono
         begin
-            if (wa3 && we3) 
-					registradores[wa3] <= wd3;
+            if (wa3 && we3) registradores[wa3] <= wd3; 
         end
 
     // Leitura dos valores dos registradores
@@ -32,7 +30,6 @@ endmodule
 /* Menor quantidade de linhas
 
     logic [N-1:0] registradores[N-1:0];
-    initial registradores[0] = 0;
     always@(posedge clk, negedge rst) if (wa3 && we3) registradores[wa3] <= wd3; 
     assign rd1 = registradores[ra1];
     assign rd2 = registradores[ra2];
