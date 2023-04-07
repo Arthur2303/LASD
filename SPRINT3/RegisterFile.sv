@@ -15,7 +15,7 @@ module RegisterFile #(parameter N = 8)
     always@(posedge clk) // reset assí­ncrono
         begin
             if (wa3 && we3) 
-					registradores[wa3] <= wd3;
+				registradores[wa3] <= wd3;
         end
 
     // Leitura dos valores dos registradores
