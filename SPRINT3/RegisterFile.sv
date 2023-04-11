@@ -14,8 +14,10 @@ module RegisterFile #(parameter N = 8)
     // Escrita nos registradores dependendo do clock e reset.
     always@(posedge clk) // reset assí­ncrono
         begin
-            if (wa3 && we3) 
+            if (wa3 && we3)   
 				registradores[wa3] <= wd3;
+            if ( rst )
+                registradores[wa3] <= 0;
         end
 
     // Leitura dos valores dos registradores
