@@ -35,16 +35,22 @@ LCD_TEST MyLCD (
 );
 //---------- modifique a partir daqui --------
 
+
 	// SPRINT3
 
-	RegisterFile #(.N(8)) register( .wd3(   SW[7:0]   ), .wa3( SW[16:14] ), .ra1( SW[13:11] ), .ra2(   SW[10:8]  ), 
-								    .we3(   SW[17]    ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1( w_d0x0[7:0] ), 
-							    	.rd2( w_d0x1[7:0] ));
+	assign LEDG[8] = ~KEY[1];
 
-
+	decodificador #(.N(4)) decod1(.SW( SW[3:0] ), .QQ( HEX0[0:6] ));
+	
+	decodificador #(.N(4)) decod2(.SW( SW[7:4] ), .QQ( HEX1[0:6] ));
+	
+	RegisterFile #(.N(8)) register(.wd3(   SW[7:0]   ), .wa3( SW[16:14] ), .ra1( SW[13:11] ), .ra2(   SW[10:8]  ), 
+				       .we3(   SW[17]    ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1( w_d0x0[7:0] ), 
+				       .rd2( w_d0x1[7:0] ));
+	
 
 	// SPRINT2 
-	/* wire connection1, connectionDesafio; 
+	/*wire connection1, connectionDesafio; 
 	wire [3:0] connection2;
 
 	assign HEX0[0:6] = SW[6:0]; // Item 1
@@ -65,7 +71,7 @@ LCD_TEST MyLCD (
 	
 	FreqDivisor #(.BordaDeSubida(4166666)) divisorD(.CLOCK_50( CLOCK_50 ), .LEDG( connectionDesafio ));
 	
-	desafio desafD(.clk( connectionDesafio ), .out( HEX6[0:6] )); */
+	desafio desafD(.clk( connectionDesafio ), .out( HEX6[0:6] ));*/
 	
 
 	// SPRINT1
