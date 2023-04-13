@@ -39,6 +39,8 @@ module tb_RegisterFile;
     logic we3, clk, rst;
     //Outputs
     logic [7:0] rd1, rd2;
+	 
+    `timescale 1us/10ns
 
     RegisterFile #(.N(8)) register( .wd3( wd3 ), .wa3( wa3 ), .ra1( ra1 ), .ra2( ra2 ), 
 								    .we3( we3 ), .clk( clk ), .rst( rst ), .rd1( rd1 ), 
@@ -58,7 +60,9 @@ module tb_RegisterFile;
     always #1 clk = ~clk;
 
     initial begin
-
+			
+		  rst = 0;
+		  #2 rst = 1;
         we3 = 1;
         wa3 = 1;
         #1 wd3 = 8'hab;
@@ -68,10 +72,9 @@ module tb_RegisterFile;
         #3 ra2 = 4;
         #3 wa3 = 5;
         wd3 = 8'haf;
-        ra1 = 5;
+        #1 ra1 = 5;
         ra2 = 1;
-        #5 rst = 0;
-
+   
     end
 
     initial
@@ -82,7 +85,7 @@ module tb_RegisterFile;
         end
 
     initial 
-        #25 $finish;
+        #20 $finish;
 
 endmodule
 
