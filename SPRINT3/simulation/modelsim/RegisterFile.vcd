@@ -1,0 +1,137 @@
+$date
+	Wed Apr 12 22:56:01 2023
+$end
+$version
+	ModelSim Version 10.1d
+$end
+$timescale
+	1ps
+$end
+$scope module tb_RegisterFile $end
+$scope module register $end
+$var parameter 32 ! N $end
+$var wire 1 " wd3 [7] $end
+$var wire 1 # wd3 [6] $end
+$var wire 1 $ wd3 [5] $end
+$var wire 1 % wd3 [4] $end
+$var wire 1 & wd3 [3] $end
+$var wire 1 ' wd3 [2] $end
+$var wire 1 ( wd3 [1] $end
+$var wire 1 ) wd3 [0] $end
+$var wire 1 * wa3 [2] $end
+$var wire 1 + wa3 [1] $end
+$var wire 1 , wa3 [0] $end
+$var wire 1 - ra1 [2] $end
+$var wire 1 . ra1 [1] $end
+$var wire 1 / ra1 [0] $end
+$var wire 1 0 ra2 [2] $end
+$var wire 1 1 ra2 [1] $end
+$var wire 1 2 ra2 [0] $end
+$var wire 1 3 we3 $end
+$var wire 1 4 clk $end
+$var wire 1 5 rst $end
+$var reg 8 6 rd1 [7:0] $end
+$var reg 8 7 rd2 [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 6
+b0 7
+b1000 !
+0)
+0(
+0'
+0&
+0%
+0$
+0#
+0"
+1,
+0+
+0*
+0/
+0.
+0-
+02
+01
+00
+13
+04
+15
+$end
+#1
+1)
+1(
+1&
+1$
+1"
+14
+#2
+1/
+1'
+1%
+1#
+0,
+1*
+b10101011 6
+04
+#3
+14
+#4
+04
+#5
+10
+b11111111 7
+14
+#6
+04
+#7
+14
+#8
+12
+00
+1-
+0%
+0#
+1,
+bx 6
+b10101011 7
+04
+#9
+14
+b10101111 6
+#10
+04
+#11
+14
+#12
+04
+#13
+05
+14
+b0 6
+b0 7
+#14
+04
+#15
+14
+#16
+04
+#17
+14
+#18
+04
+#19
+14
+#20
+04
+#21
+14
+#22
+04
+#23
+14
+#24
+04

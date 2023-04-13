@@ -26,17 +26,20 @@ module tb_RegisterFile();
 
     always #1 clk = ~clk;
 
-
     initial begin
 
         we3 = 1;
         wa3 = 1;
-        wd3 = 8'hab;
-        #4
-        wa3 = 4;
-        #2 wd3 = 8'hff;
+        #1 wd3 = 8'hab;
+        #1 wa3 = 4;
+        wd3 = 8'hff;
         ra1 = 1;
-        ra2 = 4;
+        #3 ra2 = 4;
+        #3 wa3 = 5;
+        wd3 = 8'haf;
+        ra1 = 5;
+        ra2 = 1;
+        #5 rst = 0;
 
         // #1@(posedge clk) {we3,ra1,ra2,wa3,wd3} = 18'b0_000_000_000_00001010;
         // #1@(posedge clk) {we3,ra1,ra2,wa3,wd3} = 18'b1_000_000_001_10001010;
@@ -55,6 +58,7 @@ module tb_RegisterFile();
         // #2$finish;
 
     end
+
     initial
 
         begin
@@ -63,6 +67,6 @@ module tb_RegisterFile();
         end
 
     initial 
-        #15 $finish;
+        #25 $finish;
 
 endmodule

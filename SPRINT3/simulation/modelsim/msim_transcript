@@ -1,0 +1,103 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Mod_Teste_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3 {C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_TEST2.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module LCD_TEST
+# 
+# Top level modules:
+# 	LCD_TEST
+# vlog -vlog01compat -work work +incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3 {C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_Controller.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module LCD_Controller
+# 
+# Top level modules:
+# 	LCD_Controller
+# vlog -sv -work work +incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3 {C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/RegisterFile.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module RegisterFile
+# -- Compiling module tb_RegisterFile
+# 
+# Top level modules:
+# 	tb_RegisterFile
+# vlog -sv -work work +incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3 {C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Mod_Teste
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(6): (vlog-2892) Net type of 'KEY' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(7): (vlog-2892) Net type of 'SW' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(9): (vlog-2892) Net type of 'HEX0' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(9): (vlog-2892) Net type of 'HEX1' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(9): (vlog-2892) Net type of 'HEX2' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(9): (vlog-2892) Net type of 'HEX3' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(9): (vlog-2892) Net type of 'HEX4' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(9): (vlog-2892) Net type of 'HEX5' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(9): (vlog-2892) Net type of 'HEX6' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(9): (vlog-2892) Net type of 'HEX7' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(10): (vlog-2892) Net type of 'LEDG' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(11): (vlog-2892) Net type of 'LEDR' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(15): (vlog-2892) Net type of 'LCD_DATA' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(18): (vlog-2892) Net type of 'GPIO_0' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(19): (vlog-2892) Net type of 'GPIO_1' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(4): (vlog-2892) Net type of 'CLOCK_27' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(4): (vlog-2892) Net type of 'CLOCK_50' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(13): (vlog-2892) Net type of 'UART_TXD' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(14): (vlog-2892) Net type of 'UART_RXD' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(16): (vlog-2892) Net type of 'LCD_ON' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(16): (vlog-2892) Net type of 'LCD_BLON' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(16): (vlog-2892) Net type of 'LCD_RW' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(16): (vlog-2892) Net type of 'LCD_EN' must be explicitly declared.
+# 
+# ** Error: C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/Mod_Teste.sv(16): (vlog-2892) Net type of 'LCD_RS' must be explicitly declared.
+# 
+# ** Error: C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./Mod_Teste_run_msim_rtl_verilog.do line 11
+# C:/altera/13.0sp1/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -sv -work work +incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3 {C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3..."
+vsim work.tb_RegisterFile
+# vsim work.tb_RegisterFile 
+# Loading sv_std.std
+# Loading work.tb_RegisterFile
+# Loading work.RegisterFile
+add wave -position insertpoint sim:/tb_RegisterFile/*
+run
+# ** Note: $finish    : C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/RegisterFile.sv(85)
+#    Time: 25 ps  Iteration: 0  Instance: /tb_RegisterFile
+# 1
+# Break in Module tb_RegisterFile at C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/RegisterFile.sv line 85
+# WARNING: No extended dataflow license exists
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/simulation/modelsim/wave.do
+# save: cannot open file "C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/simulation/modelsim/wave.do": no such file or directory
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/simulation/modelsim/wave.do
+# save: cannot open file "C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/simulation/modelsim/wave.do": no such file or directory

@@ -1,0 +1,95 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\arthu\OneDrive\Documentos\Graduação\P6\LASD\SPRINT3\simulation\modelsim
+vLCD_Controller
+IW>AjO``OmM_E8ITiZD=ne2
+VRAWz:37KfncQZh9P:7g8B2
+Z1 dC:\Users\arthu\OneDrive\Documentos\Graduação\P6\LASD\SPRINT3\simulation\modelsim
+w1679448450
+8C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_Controller.v
+FC:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_Controller.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3 -O0
+n@l@c@d_@controller
+!i10b 1
+!s100 P^:6IXiVUEfN]V=:C[Ti10
+!s85 0
+!s108 1681350942.759000
+!s107 C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3|C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_Controller.v|
+!s101 -O0
+vLCD_TEST
+I@14J5hoeNHMH00kj@^U232
+V6XXiWig0TX>ZAN11o1Mh:1
+R1
+w1679527180
+8C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_TEST2.v
+FC:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_TEST2.v
+L0 1
+R2
+r1
+31
+R3
+n@l@c@d_@t@e@s@t
+R4
+!i10b 1
+!s100 8NgRaYehIeCIRhiFRoIF03
+!s85 0
+!s108 1681350942.091000
+!s107 C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_TEST2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3|C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/LCD_TEST2.v|
+!s101 -O0
+vRegisterFile
+Z5 DXx6 sv_std 3 std 0 22 F[19LRNL:5;XmIFh[XOPn1
+!i10b 1
+!s100 QzX_WnhHWE;JMXkZ=?OjY3
+Ie:WFVY=ZPA5;ZWYQf>_893
+VdFd<fk86N>AjZENQjSgee1
+Z6 !s105 RegisterFile_sv_unit
+S1
+R1
+Z7 w1681350376
+Z8 8C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/RegisterFile.sv
+Z9 FC:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/RegisterFile.sv
+L0 1
+R2
+r1
+!s85 0
+31
+Z10 !s108 1681350943.014000
+Z11 !s107 C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/RegisterFile.sv|
+Z12 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3|C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3/RegisterFile.sv|
+!s101 -O0
+Z13 o-sv -work work -O0
+Z14 !s92 -sv -work work +incdir+C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT3 -O0
+n@register@file
+vtb_RegisterFile
+R5
+!i10b 1
+!s100 kUbj^Wnl^aHdo><CO`<Qm3
+Il_jQmSX7P?gnRUhE:LGGZ3
+VN__[<CUdeaRPOHe0_^4DR2
+R6
+S1
+R1
+R7
+R8
+R9
+L0 34
+R2
+r1
+!s85 0
+31
+R10
+R11
+R12
+!s101 -O0
+R13
+R14
+ntb_@register@file
