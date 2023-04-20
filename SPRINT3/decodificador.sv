@@ -1,4 +1,4 @@
-module decodificador #(parameter InSize = 4 )(input logic [N-1:0] SW,
+module decodificador #(parameter N = 4 )(input logic [N-1:0] SW,
 					 output logic [0:6] QQ);
 
 	logic [0:6] HEX3;
