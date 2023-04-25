@@ -44,11 +44,13 @@ LCD_TEST MyLCD (
 	assign w_d1x1 = w_SrcB;		assign w_d0x4 = w_ULAResultWd3;
 	assign w_d0x4 = w_PC;
 	
+	PC ProgramCounter( 			.PCin( w_PCp1 ), .clk( KEY[1] ), .PC( w_PC));
 	
 	InstrMemory instruction(		.A( w_ PC ), .RD( w_RD ));
 	
 	
-	ControlUnit control(			.OP( w_RD[31:26] ), .Funct( w_RD[5:0] ), .Jump(  ), .MemtoReg(), .MemWrite(), .Branch(), .ULASrc, RegDst(), .RegWrite(), .ULAControl());
+	ControlUnit control(			.OP( w_RD[31:26] ), .Funct( w_RD[5:0] ), .Jump(  ), .MemtoReg(), .MemWrite(), .Branch(), .ULASrc, RegDst(), 
+			    			.RegWrite(), .ULAControl());
 	
 	
 	RegisterFile #(.N(8)) register(		.wd3(   SW[7:0]   ), .wa3(  w_wa3  ), .ra1( w_RD[25:21] ), .ra2( w_RD[20:16] ), 
@@ -59,8 +61,7 @@ LCD_TEST MyLCD (
 	Mux2x1 #(.N(8)) MuxULASrc( 		.in0( w_rd2 ), .in1( 8'h07 ), .Sel( w_ALUSrc ), .out( w_SrcB ));
 												
 	
-	ULA ula(				.SrcA( w_rd1SrcA ), .SrcB( w_SrcB ), .ULAControl( w_ULAControl ), .Z( LEDG[0] ), 
-						.ULAResult( w_ULAResultWd3 ));
+	ULA ula(				.SrcA( w_rd1SrcA ), .SrcB( w_SrcB ), .ULAControl( w_ULAControl ), .ULAResult( w_ULAResultWd3 ));
 	
 	
 	Mux2x1 #(.N(4)) MuxWR( 			.in0( w_RD[20:16] ), .in1( w_RD[15:11]), .Sel( w_RegDst ), .out( w_wa3 ));
@@ -75,9 +76,9 @@ LCD_TEST MyLCD (
 	
 	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
 	
-	RegisterFile #(.N(8)) register(	.wd3(   SW[7:0]   ), .wa3( SW[16:14] ), .ra1( SW[13:11] ), .ra2(   3'b010    ), 
-												.we3(     1'b1    ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1(  w_rd1SrcA  ), 
-												.rd2(    w_rd2    ));
+	RegisterFile #(.N(8)) register(		.wd3(   SW[7:0]   ), .wa3( SW[16:14] ), .ra1( SW[13:11] ), .ra2(   3'b010    ), 
+						.we3(     1'b1    ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1(  w_rd1SrcA  ), 
+						.rd2(    w_rd2    ));
 												
 	Mux2x1 MuxULASrc( .in0( w_rd2 ), .in1( 8'h07 ), .Sel( SW[17] ), .out( w_SrcB ));
 												
