@@ -1,6 +1,6 @@
 module ControlUnit(	input logic [5:0] OP, Funct,
-					output logic Jump, MemtoReg, MemWrite, Branch, ULASrc, RegDst, RegWrite,
-					output logic [2:0 ULAControl]);
+			output logic Jump, MemtoReg, MemWrite, Branch, ULASrc, RegDst, RegWrite,
+			output logic [2:0 ULAControl]);
 
 
 	// Instrução do tipo R: OP = 6'b000000 e Funct variando
