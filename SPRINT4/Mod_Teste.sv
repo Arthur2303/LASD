@@ -44,9 +44,9 @@ LCD_TEST MyLCD (
 	
 	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3;
 	
-	RegisterFile #(.N(8)) register(	.wd3(   SW[7:0]   ), .wa3( SW[16:14] ), .ra1( SW[13:11] ), .ra2(   3'b010    ), 
-												.we3(     1'b1    ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1(  w_rd1SrcA  ), 
-												.rd2(    w_rd2    ));
+	RegisterFile #(.N(8)) register(		.wd3(   SW[7:0]   ), .wa3( SW[16:14] ), .ra1( SW[13:11] ), .ra2(   3'b010    ), 
+						.we3(     1'b1    ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1(  w_rd1SrcA  ), 
+						.rd2(    w_rd2    ));
 												
 	Mux2x1 MuxULASrc( .in0( w_rd2 ), .in1( 8'h07 ), .Sel( SW[17] ), .out( w_SrcB ));
 												
