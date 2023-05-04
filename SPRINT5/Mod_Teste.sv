@@ -35,36 +35,43 @@ LCD_TEST MyLCD (
 //---------- modifique a partir daqui --------
 
 	//	SPRINT5
-	logic w_RegDst, w_ALUSrc, w_RegWrite;
+	logic w_RegDst, w_ALUSrc, w_RegWrite, w_Jump, w_MemtoReg, w_MemWrite,w_Branch;
 	logic [2:0] w_wa3, w_ULAControl;
 	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3, w_PCp1, w_PC;
 	logic [31:0] w_RD; // Conecta Saída da Memória de Intruções com entradas do BDR, MuxWR e Unidade de Controle.
 	
-	assign w_d0x0 = w_rd1SrcA; 	assign w_d1x0 = w_rd2;	
-	assign w_d1x1 = w_SrcB;		assign w_d0x4 = w_ULAResultWd3;
+	assign LEDG[1] = ~KEY[3];	// CLK
+	assign LEDG[0] = ~KEY[1];	// RST
+	assign {LEDR[0], LEDR[1], LEDR[2], LEDR[3], LEDR[4], LEDR[5], LEDR[6], LEDR[7], LEDR[8], LEDR[9]} = 
+			 {w_Jump, w_MemtoReg, w_MemWrite, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
+			
+		
 	assign w_d0x4 = w_PC;
 	
-	PC ProgramCounter( 			.PCin( w_PCp1 ), .clk( KEY[1] ), .PC( w_PC));
+	PC ProgramCounter( 	.PCin( w_PCp1 ), .clk( KEY[3] ), .rst( KEY[1] ), .PC( w_PC ));
 	
-	InstrMemory instruction(		.A( w_ PC ), .RD( w_RD ));
+	Adder1 add(	.In( w_PC ), .Out( w_PCp1 ));
 	
-	
-	ControlUnit control(			.OP( w_RD[31:26] ), .Funct( w_RD[5:0] ), .Jump(  ), .MemtoReg(), .MemWrite(), .Branch(), .ULASrc, RegDst(), 
-			    			.RegWrite(), .ULAControl());
+	InstrMemory instruction(	.A( w_PC ), .RD( w_RD ));
 	
 	
-	RegisterFile #(.N(8)) register(		.wd3(   SW[7:0]   ), .wa3(  w_wa3  ), .ra1( w_RD[25:21] ), .ra2( w_RD[20:16] ), 
-						.we3( w_RegWrite  ), .clk(   KEY[1]  ), .rst(   KEY[2]  ), .rd1(  w_rd1SrcA  ), 
-						.rd2(    w_rd2    ));
+	ControlUnit control(		.OP( w_RD[31:26] ), .Funct( w_RD[5:0] ), .RegDst( w_RegDst ), .RegWrite( w_RegWrite ), .ULAControl( w_ULAControl ), .ULASrc( w_ALUSrc ),
+									.Jump( w_Jump ), .MemtoReg( w_MemtoReg ), .MemWrite( w_MemWrite ), .Branch( w_Branch ));
+
+	
+	RegisterFile #(.N(8)) register(		.wd3(   w_ULAResultWd3   ), .wa3(  w_wa3  ), .ra1( w_RD[25:21] ), .ra2( w_RD[20:16] ), 
+													.we3( w_RegWrite  ), .clk(   KEY[3]  ), .rst(   KEY[1]  ), .rd1(  w_rd1SrcA  ), 
+													.rd2(    w_rd2    ), .S0(	w_d0x0	), .S1(	w_d0x1	), .S2(	w_d0x2	), .S3(	w_d0x3	), 
+													.S4(	w_d1x0	),.S5(	w_d1x1	), .S6(	w_d1x2	), .S7(	w_d1x3	));
 												
 	
-	Mux2x1 #(.N(8)) MuxULASrc( 		.in0( w_rd2 ), .in1( 8'h07 ), .Sel( w_ALUSrc ), .out( w_SrcB ));
+	Mux2x1 #(.N(8)) MuxULASrc( 	.in0( w_rd2 ), .in1( w_RD[7:0] ), .Sel( w_ALUSrc ), .out( w_SrcB ));
 												
 	
-	ULA ula(				.SrcA( w_rd1SrcA ), .SrcB( w_SrcB ), .ULAControl( w_ULAControl ), .ULAResult( w_ULAResultWd3 ));
+	ULA ula(		.SrcA( w_rd1SrcA ), .SrcB( w_SrcB ), .ULAControl( w_ULAControl ), .ULAResult( w_ULAResultWd3 ));
 	
 	
-	Mux2x1 #(.N(4)) MuxWR( 			.in0( w_RD[20:16] ), .in1( w_RD[15:11]), .Sel( w_RegDst ), .out( w_wa3 ));
+	Mux2x1 #(.N(4)) MuxWR( 		.in0( w_RD[20:16] ), .in1( w_RD[15:11]), .Sel( w_RegDst ), .out( w_wa3 ));
 
 
 	// SPRINT4
