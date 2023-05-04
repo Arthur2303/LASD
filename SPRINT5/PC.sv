@@ -1,11 +1,12 @@
 module PC(	input logic  [7:0] PCin,
-		input logic clk, 
-	  	output logic [7:0] PC); 
+		input logic clk, rst,
+		output logic [7:0] PC); 
 				
 		
 	always_ff@(posedge clk)
 		begin
-			PC <= PCin;
+			if( !rst ) PC <= 0;
+			else PC <= PCin;
 		end
 		
 endmodule
