@@ -14,6 +14,8 @@ module ControlUnit(	input logic [5:0] OP, Funct,
 				12'b001000_xxxxxx: {RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b1_0_1_010_0_0_0_0; // ADDi
 				12'b100011_xxxxxx: {RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b1_0_1_010_0_0_1_0; // LW
 				12'b101011_xxxxxx: {RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_x_1_010_0_1_x_0; // SW
+				12'b000100_xxxxxx: {RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_x_0_110_1_0_x_0; // BEQ
+				12'b000010_xxxxxx: {RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b0_x_x_xxx_x_0_x_1; // J
 				default: {RegWrite,RegDst,ULASrc,ULAControl,Branch,MemWrite,MemtoReg,Jump} = 10'b1_1_1_111_1_1_1_1; // Não faz nada além de acender todos os LEDS
 			endcase
 		end
