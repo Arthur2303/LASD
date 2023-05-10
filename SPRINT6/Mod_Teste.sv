@@ -34,11 +34,11 @@ LCD_TEST MyLCD (
 );
 //---------- modifique a partir daqui --------
 
-	//	SPRINT5
+	//	SPRINT6
 	logic w_RegDst, w_ALUSrc, w_RegWrite, w_Jump, w_MemtoReg, w_MemWrite,w_Branch;
 	logic [2:0] w_wa3, w_ULAControl;
-	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3, w_PCp1, w_PC;
-	logic [31:0] w_RD; // Conecta Saída da Memória de Intruções com entradas do BDR, MuxWR e Unidade de Controle.
+	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3, w_PCp1, w_PC, w_RData w_wd3;
+	logic [31:0] w_RD; 
 	
 	assign LEDG[1] = ~KEY[3];	// CLK
 	assign LEDG[0] = ~KEY[1];	// RST
@@ -52,8 +52,11 @@ LCD_TEST MyLCD (
 	
 	Adder1 add(	.In( w_PC ), .Out( w_PCp1 ));
 	
-	InstrMemory instruction(	.A( w_PC ), .RD( w_RD ));
+	RomInstMem ROM(  .address( w_ULAResultWd3 ), .data( w_rd2 ), .clock( CLOCK_50 ), .wren( w_MemWrite ), .q( w_RData ));
 	
+	Mux2x1 #(.N(8)) MuxDDest( .in0( w_ULAResultWd3 ), .in1( w_RData ), .Sel( w_MemtoReg ), .out( w_wd3 ));
+	
+	RamDataMem RAM( .address( w_PC ), .clock( CLOCK_50 ), .q(  ));
 	
 	ControlUnit control(		.OP( w_RD[31:26] ), .Funct( w_RD[5:0] ), .RegDst( w_RegDst ), .RegWrite( w_RegWrite ), .ULAControl( w_ULAControl ), .ULASrc( w_ALUSrc ),
 									.Jump( w_Jump ), .MemtoReg( w_MemtoReg ), .MemWrite( w_MemWrite ), .Branch( w_Branch ));
