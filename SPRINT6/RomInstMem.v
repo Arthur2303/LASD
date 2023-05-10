@@ -6,7 +6,7 @@
 // ============================================================
 // File Name: RomInstMem.v
 // Megafunction Name(s):
-// 			altsyncram
+// 			altsyncram 
 //
 // Simulation Library Files(s):
 // 			altera_mf

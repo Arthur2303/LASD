@@ -50,7 +50,7 @@ LCD_TEST MyLCD (
 	
 	PC ProgramCounter( 	.PCin( w_PCp1 ), .clk( KEY[3] ), .rst( KEY[1] ), .PC( w_PC ));
 	
-	Adder1 add(	.In( w_PC ), .Out( w_PCp1 ));
+	Adder1 add(	.In( w_PC ), .Out( w_PCp1 )); 
 	
 	RomInstMem ROM(  .address( w_ULAResultWd3 ), .data( w_rd2 ), .clock( CLOCK_50 ), .wren( w_MemWrite ), .q( w_RData ));
 	

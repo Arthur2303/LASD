@@ -8,7 +8,7 @@
 // Megafunction Name(s):
 // 			altsyncram
 //
-// Simulation Library Files(s):
+// Simulation Library Files(s): 
 // 			altera_mf
 // ============================================================
 // ************************************************************
