@@ -34,7 +34,7 @@ LCD_TEST MyLCD (
 );
 //---------- modifique a partir daqui --------
 
-	//SPRINT6
+	//	SPRINT6
 	logic w_RegDst, w_ALUSrc, w_RegWrite, w_Jump, w_MemtoReg, w_MemWrite,w_Branch, clk;
 	logic [2:0] w_wa3, w_ULAControl;
 	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3, w_PCp1, w_PC, w_RData, w_wd3;
