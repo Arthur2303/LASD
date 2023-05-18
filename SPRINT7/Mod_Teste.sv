@@ -35,27 +35,35 @@ LCD_TEST MyLCD (
 //---------- modifique a partir daqui --------
 
 	//	SPRINT7
-	logic w_RegDst, w_ALUSrc, w_RegWrite, w_Jump, w_MemtoReg, w_MemWrite, w_Branch, w_PCSrc, w_Z, clk;
+	logic w_RegDst, w_ALUSrc, w_RegWrite, w_Jump, w_MemtoReg, w_MemWrite, w_Branch, w_PCSrc, w_Z, clk, w_Jr, w_Jal;
 	logic [2:0] w_wa3, w_ULAControl;
-	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3, w_PCp1, w_PC, w_RData, w_wd3, w_m1, w_nPC, w_PCBranch;
+	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3, w_PCp1, w_PC, w_RData, w_wd3, w_m1, w_nPC, w_PCBranch, w_MuxToPc;
 	logic [31:0] w_RD; 
 	
 	assign LEDG[1] = ~clk;	// CLK
 	assign LEDG[0] = ~KEY[1];	// RST
-	assign {LEDR[0], LEDR[1], LEDR[2], LEDR[3], LEDR[4], LEDR[5], LEDR[6], LEDR[7], LEDR[8], LEDR[9]} = 
-			 {w_Jump, w_MemtoReg, w_MemWrite, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
+	//assign {LEDR[0], LEDR[1], LEDR[2], LEDR[3], LEDR[4], LEDR[5], LEDR[6], LEDR[7], LEDR[8], LEDR[9]} = 
+	//		 {w_Jump, w_MemtoReg, w_MemWrite, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
 	assign w_d0x4 = w_PC;
-	assign w_PCSrc = w_Z & w_Branch; // AND
+	assign w_PCSrc = w_Z & w_Branch; // AND Seletora do MuxPCSrc
 	assign w_PCBranch = w_RD[7:0] + w_PCp1; // Adder Branch
+	
+	//Desafio
+	assign {LEDR[0], LEDR[1], LEDR[2], LEDR[3], LEDR[4], LEDR[5], LEDR[6], LEDR[7], LEDR[8], LEDR[9], LEDR[10], LEDR[11]} = 
+		{w_Jr, w_Jal, w_Jump, w_MemtoReg, w_MemWrite, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
 	
 	
 	FreqDivisor #(.BordaDeSubida(12500000)) divisorD (.CLOCK_50( CLOCK_50 ), .LEDG( clk )); // 2Hz
 	
-	Mux2x1 #(N(8)) MuxPCSrc( .in0( w_PCp1 ), .in1( w_PCBranch ), .Sel( w_PCSrc ), .out( w_m1 ));
+	Mux2x1 #(.N(8)) MuxPCSrc( .in0( w_PCp1 ), .in1( w_PCBranch ), .Sel( w_PCSrc ), .out( w_m1 ));
 
-	Mux2x1 #(N(8)) MuxJump( .in0( w_m1 ), .in1( w_RD[7:0] ), .Sel( w_Jump ), .out( w_nPC ));
+	// Mux2x1 #(.N(8)) MuxJump( .in0( w_m1 ), .in1( w_RD[7:0] ), .Sel( w_Jump ), .out( w_nPC ));
+	
+	Mux2x1 #(.N(8)) MuxJal( .in0( w_m1 ), .in1( w_RD[7:0] ), .Sel( w_Jal ), .out( w_nPC )); //Desafio
+	
+	Mux2x1 #(.N(8)) MuxJr( .in0( w_nPC ), .in1( w_rd1SrcA ), .Sel( w_Jr ), .out( w_MuxToPc )); // Desafio
 
-	PC ProgramCounter( .PCin( w_PCp1 ), .clk( clk ), .rst( KEY[1] ), .PC( w_PC ));
+	PC ProgramCounter( .PCin( w_nPC ), .clk( clk ), .rst( KEY[1] ), .PC( w_PC ));
 	
 	Adder1 add(	.In( w_PC ), .Out( w_PCp1 )); 
 	
@@ -81,10 +89,10 @@ LCD_TEST MyLCD (
 	ULA ula(	.SrcA( w_rd1SrcA ), .SrcB( w_SrcB ), .ULAControl( w_ULAControl ), .Z( w_Z ), .ULAResult( w_ULAResultWd3 ));
 	
 	
-	Mux2x1 #(.N(4)) MuxWR(	.in0( w_RD[20:16] ), .in1( w_RD[15:11]), .Sel( w_RegDst ), .out( w_wa3 ));
+	// Mux2x1 #(.N(4)) MuxWR(	.in0( w_RD[20:16] ), .in1( w_RD[15:11]), .Sel( w_RegDst ), .out( w_wa3 ));
 	
-
+	Mux2x1 #(.N(4)) MuxWR(	.in0( w_RD[20:16] ), .in1( w_RD[15:11]), .Sel( w_RegDst ), .out( w_wa3 )); // Desafio
 	
-				
+	
 				
 endmodule
