@@ -9,16 +9,14 @@ module ParallelOut( input logic clk, we, wren, RegData
     // Reg
     logic [7:0] Registrador;
 
-    assign fioB = fioA && we;
-    assign wren = fioA && ~we;
+    assign fioA = (Address == 8'hFF);
+    assign fioB = fioA & we;
+    assign wren = ~fioA & we;
 
-    always_comb if( Address == 8'hFF) fioA = Address;
-
-    always_ff (posedge clk) begin
-
-
-    
+    always_ff (posedge clk, posedge fioB) begin
+        Registrador <= RegData;
     end
 
-    assign 
+    assign DataOut = Registrador;
+
 endmodule

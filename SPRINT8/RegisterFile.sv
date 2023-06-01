@@ -7,7 +7,7 @@ module RegisterFile #(parameter N = 8)
          // ra1 e ra2 são os seletores do mux, ra1 disponibilizando a saí­da no rd1 e ra2 a no rd2.
 
     logic	[N-1:0] registradores[N-1:0];
-	 assign {S0, S1, S2, S3, S4, S5, S6, S7} = {registradores[0], registradores[1], registradores[2], registradores[3], registradores[4], registradores[5], registradores[6], registradores[7]};
+	assign  {S0, S1, S2, S3, S4, S5, S6, S7} = {registradores[0], registradores[1], registradores[2], registradores[3], registradores[4], registradores[5], registradores[6], registradores[7]};
     initial registradores[0] = 0;
 
     // Escrita nos registradores dependendo do clock.
