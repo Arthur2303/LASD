@@ -15,7 +15,7 @@ label:	add $s2, $s2, $s2
 sai:	
 
 # Formato para o MIPS_Assembler
-addi $1, $0, 2
+lw $1, FF($0)
 addi $2, $0, 1  	
 addi $4, $0, 4  
 add  $5, $0, $0 	 
@@ -27,3 +27,4 @@ add $2, $2, $2
 addi $6, $6, 1
 beq $6, $4, 12
 j 5
+lw $5, FF($0)
