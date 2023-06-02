@@ -13,3 +13,17 @@ label:	add $s2, $s2, $s2
 		beq $s6, $s4, sai
 		j loop
 sai:	
+
+# Formato para o MIPS_Assembler
+addi $1, $0, 2
+addi $2, $0, 1  	
+addi $4, $0, 4  
+add  $5, $0, $0 	 
+add $6, $0, $0   
+and $3, $1, $2
+beq $3, $0, 8
+addi $5, $5, 1
+add $2, $2, $2
+addi $6, $6, 1
+beq $6, $4, 12
+j 5

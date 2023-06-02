@@ -1,5 +1,5 @@
 Fitter report for Mod_Teste
-Thu Jun 01 23:44:35 2023
+Thu Jun 01 23:52:44 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Jun 01 23:44:35 2023           ;
+; Fitter Status                      ; Successful - Thu Jun 01 23:52:44 2023           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Mod_Teste                                       ;
 ; Top-level Entity Name              ; Mod_Teste                                       ;
@@ -3391,19 +3391,19 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "VGA_R[9]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_SYNC" is assigned to location or region, but does not exist in design
     Warning (15706): Node "VGA_VS" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:03
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:05
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:03
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 6% of the available device resources in the region that extends from location X22_Y12 to location X32_Y23
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 1.70 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 1.25 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 169 output pins without output pin load capacitance assignment
     Info (306007): Pin "LCD_DATA[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -3578,7 +3578,7 @@ Warning (306006): Found 169 output pins without output pin load capacitance assi
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Warning (169064): Following 80 pins have no output enable or a GND or VCC output enable - later changes to this connectivity may change fitting results
@@ -3666,9 +3666,9 @@ Warning (169174): The Reserve All Unused Pins setting has not been specified, an
 Info (144001): Generated suppressed messages file C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/Mod_Teste.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 240 warnings
     Info: Peak virtual memory: 4892 megabytes
-    Info: Processing ended: Thu Jun 01 23:44:36 2023
-    Info: Elapsed time: 00:00:27
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Processing ended: Thu Jun 01 23:52:44 2023
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:12
 
 
 +----------------------------+
