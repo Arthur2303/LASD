@@ -1,15 +1,15 @@
-# Código assembly necessário para a SPRINT8. OBS: Feito no MARS 4.5
+# Código assembly necessário para a SPRINT8 (Contador de 1's)
 
-addi $s1, $zero, 9  # Número de entrada
-addi $s2, $zero, 1  # Número que será comparado
-addi $s4, $zero, 4  # Quantidade de iterações / Número máximo após os deslocamentos
-add $s5, $zero, $zero # Contador de 1
-add $s6, $zero, 1 
-
-loop: 	and $s3, $s1, $s2
-	beq $s3,$zero, label
-	addi $s5, $s5, $s1
-label:	add $s2, $s2, $s2
-	sub $s4, $s4, $s6
-	beq $zero, $s4, loop
-	
+addi $s1, $s0, 10	# Número de entrada
+addi $s2, $s0, 1  	# Número que será comparado
+addi $s4, $s0, 4  	# Quantidade de iterações 
+add  $s5, $s0, $s0 	# Contador de 1 (Saída)	 
+add $s6, $s0, $s0   	# Contador do loop
+loop: 		and $s3, $s1, $s2
+		beq $s3, $s0, label
+		addi $s5, $s5, 1
+label:		add $s2, $s2, $s2
+		addi $s6, $s6, 1
+		beq $s6, $s4, sai
+		j loop
+sai:	

@@ -44,10 +44,11 @@ LCD_TEST MyLCD (
 	assign LEDG[0] = ~KEY[1];	// RST
 	assign {LEDR[0], LEDR[1], LEDR[2], LEDR[3], LEDR[4], LEDR[5], LEDR[6], LEDR[7], LEDR[8], LEDR[9]} = 
 		   {w_Jump, w_MemtoReg, w_MemWrite, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
-	assign w_d0x4 = w_PC;
+	// assign w_d0x4 = w_PC;
 	assign w_PCSrc = w_Z & w_Branch; // AND Seletora do MuxPCSrc
 	assign w_PCBranch = w_RD[7:0] + w_PCp1; // Adder Branch
 	
+	decodificador decod1(.SW( SW[3:0] ), .QQ( HEX0[0:6] )); 
 	
 	FreqDivisor #(.BordaDeSubida(2500000)) divisorD (.CLOCK_50( CLOCK_50 ), .LEDG( clk )); // 10Hz
 	
@@ -59,15 +60,15 @@ LCD_TEST MyLCD (
 	
 	Adder1 add(	.In( w_PC ), .Out( w_PCp1 )); 
 	
-	ParallelOut Pout( .clk( clk ), .we( w_MemWrite ), .wren( w_We ), .RegData( w_RegDst ), .Address( w_ULAResultWd3 ), .DataOut( w_d1x4 ));
-
 	RomInstMem ROM( .address( w_PC ), .clock( CLOCK_50 ), .q( w_RD ));
 
-	ParallelIn Pin(.DataIn( SW[7:0] ), .Address( w_ULAResultWd3 ), .MemData( w_RData ), .RegData( w_RegData ));
+	ParallelOut Pout( .clk( clk ), .we( w_MemWrite ), .wren( w_We ), .RegData( w_rd2 ), .Address( w_ULAResultWd3 ), .DataOut( w_d1x4 ));
 	
 	Mux2x1 #(.N(8)) MuxDDest( .in0( w_ULAResultWd3 ), .in1( w_RegData ), .Sel( w_MemtoReg ), .out( w_wd3 ));
 	
-	RamDataMem RAM( .address( w_ULAResultWd3 ), .data( w_RegDst ), .clock( CLOCK_50 ), .wren( w_We ), .q( w_RData ));
+	RamDataMem RAM( .address( w_ULAResultWd3 ), .data( w_rd2 ), .clock( CLOCK_50 ), .wren( w_We ), .q( w_RData ));
+
+	ParallelIn Pin(.DataIn( SW[7:0] ), .Address( w_ULAResultWd3 ), .MemData( w_RData ), .RegData( w_RegData ));
 	
 	ControlUnit control(	.OP( w_RD[31:26] ), .Funct( w_RD[5:0] ), .RegDst( w_RegDst ), .RegWrite( w_RegWrite ), .ULAControl( w_ULAControl ), .ULASrc( w_ALUSrc ),
 							.Jump( w_Jump ), .MemtoReg( w_MemtoReg ), .MemWrite( w_MemWrite ), .Branch( w_Branch ));

@@ -1,6 +1,6 @@
 module ControlUnit(	input logic [5:0] OP, Funct,
-							output logic Jump, MemWrite, Branch, ULASrc, RegWrite, MemtoReg, RegDst
-							output logic [2:0] ULAControl);
+							output logic Jump, MemWrite, Branch, ULASrc, RegWrite, MemtoReg, RegDst,
+							output logic [2:0] ULAControl );
 
 	always@(*)
 		begin 

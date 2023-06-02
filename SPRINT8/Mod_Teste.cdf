@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP2C35F672) Path("E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/") File("Mod_Teste.sof") MfrSpec(OpMask(1));
+		Device PartName(EP2C35F672) Path("C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/") File("Mod_Teste.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

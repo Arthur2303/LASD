@@ -5,14 +5,14 @@ KEY[0] => KEY[0].IN1
 KEY[1] => KEY[1].IN2
 KEY[2] => ~NO_FANOUT~
 KEY[3] => ~NO_FANOUT~
-SW[0] => ~NO_FANOUT~
-SW[1] => ~NO_FANOUT~
-SW[2] => ~NO_FANOUT~
-SW[3] => ~NO_FANOUT~
-SW[4] => ~NO_FANOUT~
-SW[5] => ~NO_FANOUT~
-SW[6] => ~NO_FANOUT~
-SW[7] => ~NO_FANOUT~
+SW[0] => SW[0].IN2
+SW[1] => SW[1].IN2
+SW[2] => SW[2].IN2
+SW[3] => SW[3].IN2
+SW[4] => SW[4].IN1
+SW[5] => SW[5].IN1
+SW[6] => SW[6].IN1
+SW[7] => SW[7].IN1
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
 SW[10] => ~NO_FANOUT~
@@ -23,13 +23,13 @@ SW[14] => ~NO_FANOUT~
 SW[15] => ~NO_FANOUT~
 SW[16] => ~NO_FANOUT~
 SW[17] => ~NO_FANOUT~
-HEX0[6] <= <GND>
-HEX0[5] <= <GND>
-HEX0[4] <= <GND>
-HEX0[3] <= <GND>
-HEX0[2] <= <GND>
-HEX0[1] <= <GND>
-HEX0[0] <= <GND>
+HEX0[6] <= decodificador:decod1.QQ
+HEX0[5] <= decodificador:decod1.QQ
+HEX0[4] <= decodificador:decod1.QQ
+HEX0[3] <= decodificador:decod1.QQ
+HEX0[2] <= decodificador:decod1.QQ
+HEX0[1] <= decodificador:decod1.QQ
+HEX0[0] <= decodificador:decod1.QQ
 HEX1[6] <= <GND>
 HEX1[5] <= <GND>
 HEX1[4] <= <GND>
@@ -439,6 +439,20 @@ LCD_DATA[7] <= iDATA[7].DB_MAX_OUTPUT_PORT_TYPE
 LCD_RW <= <GND>
 LCD_EN <= LCD_EN~reg0.DB_MAX_OUTPUT_PORT_TYPE
 LCD_RS <= iRS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|Mod_Teste|decodificador:decod1
+SW[0] => Decoder0.IN3
+SW[1] => Decoder0.IN2
+SW[2] => Decoder0.IN1
+SW[3] => Decoder0.IN0
+QQ[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+QQ[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+QQ[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+QQ[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+QQ[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+QQ[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+QQ[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Mod_Teste|FreqDivisor:divisorD
@@ -1046,6 +1060,44 @@ q_a[30] <= ram_block1a30.PORTADATAOUT
 q_a[31] <= ram_block1a31.PORTADATAOUT
 
 
+|Mod_Teste|ParallelOut:Pout
+clk => Registrador[0].CLK
+clk => Registrador[1].CLK
+clk => Registrador[2].CLK
+clk => Registrador[3].CLK
+clk => Registrador[4].CLK
+clk => Registrador[5].CLK
+clk => Registrador[6].CLK
+clk => Registrador[7].CLK
+we => fioB.IN1
+we => wren.IN1
+Address[0] => Equal0.IN7
+Address[1] => Equal0.IN6
+Address[2] => Equal0.IN5
+Address[3] => Equal0.IN4
+Address[4] => Equal0.IN3
+Address[5] => Equal0.IN2
+Address[6] => Equal0.IN1
+Address[7] => Equal0.IN0
+RegData[0] => Registrador[0].DATAIN
+RegData[1] => Registrador[1].DATAIN
+RegData[2] => Registrador[2].DATAIN
+RegData[3] => Registrador[3].DATAIN
+RegData[4] => Registrador[4].DATAIN
+RegData[5] => Registrador[5].DATAIN
+RegData[6] => Registrador[6].DATAIN
+RegData[7] => Registrador[7].DATAIN
+DataOut[0] <= Registrador[0].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[1] <= Registrador[1].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[2] <= Registrador[2].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[3] <= Registrador[3].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[4] <= Registrador[4].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[5] <= Registrador[5].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[6] <= Registrador[6].DB_MAX_OUTPUT_PORT_TYPE
+DataOut[7] <= Registrador[7].DB_MAX_OUTPUT_PORT_TYPE
+wren <= wren.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |Mod_Teste|Mux2x1:MuxDDest
 in0[0] => out.DATAA
 in0[1] => out.DATAA
@@ -1251,6 +1303,41 @@ wren_a => ram_block1a6.PORTAWE
 wren_a => ram_block1a7.PORTAWE
 
 
+|Mod_Teste|ParallelIn:Pin
+MemData[0] => RegData.DATAA
+MemData[1] => RegData.DATAA
+MemData[2] => RegData.DATAA
+MemData[3] => RegData.DATAA
+MemData[4] => RegData.DATAA
+MemData[5] => RegData.DATAA
+MemData[6] => RegData.DATAA
+MemData[7] => RegData.DATAA
+Address[0] => Equal0.IN7
+Address[1] => Equal0.IN6
+Address[2] => Equal0.IN5
+Address[3] => Equal0.IN4
+Address[4] => Equal0.IN3
+Address[5] => Equal0.IN2
+Address[6] => Equal0.IN1
+Address[7] => Equal0.IN0
+DataIn[0] => RegData.DATAB
+DataIn[1] => RegData.DATAB
+DataIn[2] => RegData.DATAB
+DataIn[3] => RegData.DATAB
+DataIn[4] => RegData.DATAB
+DataIn[5] => RegData.DATAB
+DataIn[6] => RegData.DATAB
+DataIn[7] => RegData.DATAB
+RegData[0] <= RegData.DB_MAX_OUTPUT_PORT_TYPE
+RegData[1] <= RegData.DB_MAX_OUTPUT_PORT_TYPE
+RegData[2] <= RegData.DB_MAX_OUTPUT_PORT_TYPE
+RegData[3] <= RegData.DB_MAX_OUTPUT_PORT_TYPE
+RegData[4] <= RegData.DB_MAX_OUTPUT_PORT_TYPE
+RegData[5] <= RegData.DB_MAX_OUTPUT_PORT_TYPE
+RegData[6] <= RegData.DB_MAX_OUTPUT_PORT_TYPE
+RegData[7] <= RegData.DB_MAX_OUTPUT_PORT_TYPE
+
+
 |Mod_Teste|ControlUnit:control
 OP[0] => Equal0.IN17
 OP[0] => Equal1.IN17
@@ -1355,12 +1442,12 @@ Funct[5] => Equal3.IN18
 Funct[5] => Equal4.IN18
 Funct[5] => Equal5.IN18
 Jump <= Jump.DB_MAX_OUTPUT_PORT_TYPE
-MemtoReg <= MemtoReg.DB_MAX_OUTPUT_PORT_TYPE
 MemWrite <= MemWrite.DB_MAX_OUTPUT_PORT_TYPE
 Branch <= Branch.DB_MAX_OUTPUT_PORT_TYPE
 ULASrc <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-RegDst <= RegDst.DB_MAX_OUTPUT_PORT_TYPE
 RegWrite <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+MemtoReg <= MemtoReg.DB_MAX_OUTPUT_PORT_TYPE
+RegDst <= RegDst.DB_MAX_OUTPUT_PORT_TYPE
 ULAControl[0] <= WideOr8.DB_MAX_OUTPUT_PORT_TYPE
 ULAControl[1] <= ULAControl.DB_MAX_OUTPUT_PORT_TYPE
 ULAControl[2] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE

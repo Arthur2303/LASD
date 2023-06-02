@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mod_Teste
-Wed May 17 16:22:40 2023
+Thu Jun 01 12:07:02 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -25,22 +25,23 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  17. Source assignments for RamDataMem:RAM|altsyncram:altsyncram_component|altsyncram_l0g1:auto_generated
  18. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD
  19. Parameter Settings for User Entity Instance: LCD_TEST:MyLCD|LCD_Controller:u0
- 20. Parameter Settings for User Entity Instance: FreqDivisor:divisorD
- 21. Parameter Settings for User Entity Instance: Mux2x1:MuxPCSrc
- 22. Parameter Settings for User Entity Instance: Mux2x1:MuxJump
- 23. Parameter Settings for User Entity Instance: RomInstMem:ROM|altsyncram:altsyncram_component
- 24. Parameter Settings for User Entity Instance: Mux2x1:MuxDDest
- 25. Parameter Settings for User Entity Instance: RamDataMem:RAM|altsyncram:altsyncram_component
- 26. Parameter Settings for User Entity Instance: RegisterFile:register
- 27. Parameter Settings for User Entity Instance: Mux2x1:MuxULASrc
- 28. Parameter Settings for User Entity Instance: Mux2x1:MuxWR
- 29. altsyncram Parameter Settings by Entity Instance
- 30. Port Connectivity Checks: "Mux2x1:MuxWR"
- 31. Port Connectivity Checks: "ULA:ula"
- 32. Port Connectivity Checks: "RegisterFile:register"
- 33. Port Connectivity Checks: "RomInstMem:ROM"
- 34. Elapsed Time Per Partition
- 35. Analysis & Synthesis Messages
+ 20. Parameter Settings for User Entity Instance: decodificador:decod1
+ 21. Parameter Settings for User Entity Instance: FreqDivisor:divisorD
+ 22. Parameter Settings for User Entity Instance: Mux2x1:MuxPCSrc
+ 23. Parameter Settings for User Entity Instance: Mux2x1:MuxJump
+ 24. Parameter Settings for User Entity Instance: RomInstMem:ROM|altsyncram:altsyncram_component
+ 25. Parameter Settings for User Entity Instance: Mux2x1:MuxDDest
+ 26. Parameter Settings for User Entity Instance: RamDataMem:RAM|altsyncram:altsyncram_component
+ 27. Parameter Settings for User Entity Instance: RegisterFile:register
+ 28. Parameter Settings for User Entity Instance: Mux2x1:MuxULASrc
+ 29. Parameter Settings for User Entity Instance: Mux2x1:MuxWR
+ 30. altsyncram Parameter Settings by Entity Instance
+ 31. Port Connectivity Checks: "Mux2x1:MuxWR"
+ 32. Port Connectivity Checks: "ULA:ula"
+ 33. Port Connectivity Checks: "RegisterFile:register"
+ 34. Port Connectivity Checks: "RomInstMem:ROM"
+ 35. Elapsed Time Per Partition
+ 36. Analysis & Synthesis Messages
 
 
 
@@ -66,15 +67,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 17 16:22:40 2023           ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 01 12:07:01 2023           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Mod_Teste                                       ;
 ; Top-level Entity Name              ; Mod_Teste                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 632                                             ;
-;     Total combinational functions  ; 583                                             ;
-;     Dedicated logic registers      ; 142                                             ;
-; Total registers                    ; 142                                             ;
+; Total logic elements               ; 649                                             ;
+;     Total combinational functions  ; 600                                             ;
+;     Dedicated logic registers      ; 150                                             ;
+; Total registers                    ; 150                                             ;
 ; Total pins                         ; 194                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 7,936                                           ;
@@ -179,36 +180,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                            ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
-; FreqDivisor.sv                   ; yes             ; User SystemVerilog HDL File        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/FreqDivisor.sv          ;         ;
-; Adder1.sv                        ; yes             ; User SystemVerilog HDL File        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/Adder1.sv               ;         ;
-; ULA.sv                           ; yes             ; User SystemVerilog HDL File        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/ULA.sv                  ;         ;
-; RegisterFile.sv                  ; yes             ; User SystemVerilog HDL File        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/RegisterFile.sv         ;         ;
-; Mux2x1.sv                        ; yes             ; User SystemVerilog HDL File        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/Mux2x1.sv               ;         ;
-; LCD_TEST2.v                      ; yes             ; User Verilog HDL File              ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/LCD_TEST2.v             ;         ;
-; LCD_Controller.v                 ; yes             ; User Verilog HDL File              ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/LCD_Controller.v        ;         ;
-; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/ControlUnit.sv          ;         ;
-; PC.sv                            ; yes             ; User SystemVerilog HDL File        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/PC.sv                   ;         ;
-; RomInstMem_init.mif              ; yes             ; User Memory Initialization File    ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/RomInstMem_init.mif     ;         ;
-; RomInstMem.v                     ; yes             ; User Wizard-Generated File         ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/RomInstMem.v            ;         ;
-; RamDataMem.v                     ; yes             ; User Wizard-Generated File         ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/RamDataMem.v            ;         ;
-; mod_teste.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/mod_teste.sv            ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc        ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_mq81.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/db/altsyncram_mq81.tdf  ;         ;
-; db/altsyncram_l0g1.tdf           ; yes             ; Auto-Generated Megafunction        ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/db/altsyncram_l0g1.tdf  ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
+; ParallelOut.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/ParallelOut.sv         ;         ;
+; ParallelIn.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/ParallelIn.sv          ;         ;
+; FreqDivisor.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/FreqDivisor.sv         ;         ;
+; Adder1.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/Adder1.sv              ;         ;
+; ULA.sv                           ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/ULA.sv                 ;         ;
+; RegisterFile.sv                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RegisterFile.sv        ;         ;
+; Mux2x1.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/Mux2x1.sv              ;         ;
+; decodificador.sv                 ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/decodificador.sv       ;         ;
+; LCD_TEST2.v                      ; yes             ; User Verilog HDL File              ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/LCD_TEST2.v            ;         ;
+; LCD_Controller.v                 ; yes             ; User Verilog HDL File              ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/LCD_Controller.v       ;         ;
+; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/ControlUnit.sv         ;         ;
+; PC.sv                            ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/PC.sv                  ;         ;
+; RomInstMem_init.mif              ; yes             ; User Memory Initialization File    ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RomInstMem_init.mif    ;         ;
+; RomInstMem.v                     ; yes             ; User Wizard-Generated File         ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RomInstMem.v           ;         ;
+; RamDataMem.v                     ; yes             ; User Wizard-Generated File         ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RamDataMem.v           ;         ;
+; mod_teste.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/mod_teste.sv           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf         ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc  ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc            ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc         ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc         ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc          ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc             ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc             ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc           ;         ;
+; db/altsyncram_mq81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/db/altsyncram_mq81.tdf ;         ;
+; db/altsyncram_l0g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/db/altsyncram_l0g1.tdf ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------+
@@ -216,20 +220,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 632      ;
+; Estimated Total logic elements              ; 649      ;
 ;                                             ;          ;
-; Total combinational functions               ; 583      ;
+; Total combinational functions               ; 600      ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 247      ;
-;     -- 3 input functions                    ; 186      ;
-;     -- <=2 input functions                  ; 150      ;
+;     -- 4 input functions                    ; 266      ;
+;     -- 3 input functions                    ; 200      ;
+;     -- <=2 input functions                  ; 134      ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 423      ;
+;     -- normal mode                          ; 440      ;
 ;     -- arithmetic mode                      ; 160      ;
 ;                                             ;          ;
-; Total registers                             ; 142      ;
-;     -- Dedicated logic registers            ; 142      ;
+; Total registers                             ; 150      ;
+;     -- Dedicated logic registers            ; 150      ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 194      ;
@@ -237,8 +241,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0        ;
 ; Maximum fan-out node                        ; CLOCK_50 ;
 ; Maximum fan-out                             ; 109      ;
-; Total fan-out                               ; 2602     ;
-; Average fan-out                             ; 2.74     ;
+; Total fan-out                               ; 2719     ;
+; Average fan-out                             ; 2.79     ;
 +---------------------------------------------+----------+
 
 
@@ -247,23 +251,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                      ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
-; |Mod_Teste                                ; 583 (38)          ; 142 (0)      ; 7936        ; 0            ; 0       ; 0         ; 194  ; 0            ; |Mod_Teste                                                                               ; work         ;
+; |Mod_Teste                                ; 600 (38)          ; 150 (0)      ; 7936        ; 0            ; 0       ; 0         ; 194  ; 0            ; |Mod_Teste                                                                               ; work         ;
 ;    |Adder1:add|                           ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Adder1:add                                                                    ; work         ;
-;    |ControlUnit:control|                  ; 31 (31)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ControlUnit:control                                                           ; work         ;
-;    |FreqDivisor:divisorD|                 ; 49 (49)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|FreqDivisor:divisorD                                                          ; work         ;
-;    |LCD_TEST:MyLCD|                       ; 263 (242)         ; 51 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD                                                                ; work         ;
+;    |ControlUnit:control|                  ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ControlUnit:control                                                           ; work         ;
+;    |FreqDivisor:divisorD|                 ; 44 (44)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|FreqDivisor:divisorD                                                          ; work         ;
+;    |LCD_TEST:MyLCD|                       ; 267 (246)         ; 51 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD                                                                ; work         ;
 ;       |LCD_Controller:u0|                 ; 21 (21)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|LCD_TEST:MyLCD|LCD_Controller:u0                                              ; work         ;
 ;    |Mux2x1:MuxULASrc|                     ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Mux2x1:MuxULASrc                                                              ; work         ;
 ;    |Mux2x1:MuxWR|                         ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|Mux2x1:MuxWR                                                                  ; work         ;
 ;    |PC:ProgramCounter|                    ; 0 (0)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|PC:ProgramCounter                                                             ; work         ;
+;    |ParallelIn:Pin|                       ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ParallelIn:Pin                                                                ; work         ;
+;    |ParallelOut:Pout|                     ; 2 (2)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ParallelOut:Pout                                                              ; work         ;
 ;    |RamDataMem:RAM|                       ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|RamDataMem:RAM                                                                ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|RamDataMem:RAM|altsyncram:altsyncram_component                                ; work         ;
 ;          |altsyncram_l0g1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|RamDataMem:RAM|altsyncram:altsyncram_component|altsyncram_l0g1:auto_generated ; work         ;
-;    |RegisterFile:register|                ; 101 (101)         ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|RegisterFile:register                                                         ; work         ;
+;    |RegisterFile:register|                ; 107 (107)         ; 56 (56)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|RegisterFile:register                                                         ; work         ;
 ;    |RomInstMem:ROM|                       ; 0 (0)             ; 0 (0)        ; 5888        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|RomInstMem:ROM                                                                ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 5888        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|RomInstMem:ROM|altsyncram:altsyncram_component                                ; work         ;
 ;          |altsyncram_mq81:auto_generated| ; 0 (0)             ; 0 (0)        ; 5888        ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated ; work         ;
 ;    |ULA:ula|                              ; 82 (82)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|ULA:ula                                                                       ; work         ;
+;    |decodificador:decod1|                 ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |Mod_Teste|decodificador:decod1                                                          ; work         ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -278,14 +285,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                    ;
-+--------+--------------+---------+--------------+--------------+---------------------------+--------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance           ; IP Include File                                              ;
-+--------+--------------+---------+--------------+--------------+---------------------------+--------------------------------------------------------------+
-; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Mod_Teste|RamDataMem:RAM ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/RamDataMem.v ;
-; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Mod_Teste|RomInstMem:ROM ; E:/LASD/2022.2/ARTHURHENRIQUE_119211079/SPRINT7/RomInstMem.v ;
-+--------+--------------+---------+--------------+--------------+---------------------------+--------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                      ;
++--------+--------------+---------+--------------+--------------+---------------------------+----------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance           ; IP Include File                                                ;
++--------+--------------+---------+--------------+--------------+---------------------------+----------------------------------------------------------------+
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Mod_Teste|RamDataMem:RAM ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RamDataMem.v ;
+; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Mod_Teste|RomInstMem:ROM ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RomInstMem.v ;
++--------+--------------+---------+--------------+--------------+---------------------------+----------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -322,12 +329,12 @@ Encoding Type:  One-Hot
 ; ULA:ula|ULAResult[8]                               ; ULA:ula|Mux18       ; yes                    ;
 ; ULA:ula|ULAResult[7]                               ; ULA:ula|Mux18       ; yes                    ;
 ; ULA:ula|ULAResult[6]                               ; ULA:ula|Mux18       ; yes                    ;
+; ULA:ula|ULAResult[5]                               ; ULA:ula|Mux18       ; yes                    ;
+; ULA:ula|ULAResult[4]                               ; ULA:ula|Mux18       ; yes                    ;
+; ULA:ula|ULAResult[3]                               ; ULA:ula|Mux18       ; yes                    ;
+; ULA:ula|ULAResult[2]                               ; ULA:ula|Mux18       ; yes                    ;
 ; ULA:ula|ULAResult[1]                               ; ULA:ula|Mux18       ; yes                    ;
 ; ULA:ula|ULAResult[0]                               ; ULA:ula|Mux18       ; yes                    ;
-; ULA:ula|ULAResult[2]                               ; ULA:ula|Mux18       ; yes                    ;
-; ULA:ula|ULAResult[3]                               ; ULA:ula|Mux18       ; yes                    ;
-; ULA:ula|ULAResult[4]                               ; ULA:ula|Mux18       ; yes                    ;
-; ULA:ula|ULAResult[5]                               ; ULA:ula|Mux18       ; yes                    ;
 ; Number of user-specified and inferred latches = 9  ;                     ;                        ;
 +----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
@@ -363,12 +370,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 142   ;
+; Total registers                              ; 150   ;
 ; Number of registers using Synchronous Clear  ; 31    ;
 ; Number of registers using Synchronous Load   ; 11    ;
 ; Number of registers using Asynchronous Clear ; 51    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 99    ;
+; Number of registers using Clock Enable       ; 107   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -383,15 +390,15 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[7][3] ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[6][4] ;
 ; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[5][3] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[4][5] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[3][0] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[2][0] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[1][7] ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[0][7] ;
-; 64:1               ; 5 bits    ; 210 LEs       ; 85 LEs               ; 125 LEs                ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|mLCD_DATA[0]               ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[4][0] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[3][5] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[2][3] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[1][5] ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |Mod_Teste|RegisterFile:register|registradores[0][0] ;
+; 64:1               ; 5 bits    ; 210 LEs       ; 90 LEs               ; 120 LEs                ; Yes        ; |Mod_Teste|LCD_TEST:MyLCD|mLCD_DATA[1]               ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|ULA:ula|Mux1                              ;
-; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|ULA:ula|Mux1                              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |Mod_Teste|LCD_TEST:MyLCD|Mux2                       ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|Mux2x1:MuxDDest|out[2]                    ;
+; 4:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|ULA:ula|Mux2                              ;
 ; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|RegisterFile:register|Mux10               ;
 ; 8:1                ; 8 bits    ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; No         ; |Mod_Teste|RegisterFile:register|Mux7                ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |Mod_Teste|LCD_TEST:MyLCD|Selector2                  ;
@@ -442,12 +449,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: decodificador:decod1 ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; N              ; 4     ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: FreqDivisor:divisorD ;
-+----------------+----------+---------------------------------------+
-; Parameter Name ; Value    ; Type                                  ;
-+----------------+----------+---------------------------------------+
-; BordaDeSubida  ; 12500000 ; Signed Integer                        ;
-+----------------+----------+---------------------------------------+
++----------------+---------+----------------------------------------+
+; Parameter Name ; Value   ; Type                                   ;
++----------------+---------+----------------------------------------+
+; BordaDeSubida  ; 2500000 ; Signed Integer                         ;
++----------------+---------+----------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -721,9 +738,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed May 17 16:22:37 2023
+    Info: Processing started: Thu Jun 01 12:06:58 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file parallelout.sv
+    Info (12023): Found entity 1: ParallelOut
+Info (12021): Found 1 design units, including 1 entities, in source file parallelin.sv
+    Info (12023): Found entity 1: ParallelIn
 Info (12021): Found 1 design units, including 1 entities, in source file freqdivisor.sv
     Info (12023): Found entity 1: FreqDivisor
 Info (12021): Found 1 design units, including 1 entities, in source file adder1.sv
@@ -750,12 +771,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file rominst
     Info (12023): Found entity 1: RomInstMem
 Info (12021): Found 1 design units, including 1 entities, in source file ramdatamem.v
     Info (12023): Found entity 1: RamDataMem
-Info (12021): Found 1 design units, including 1 entities, in source file mux4x1.sv
-    Info (12023): Found entity 1: Mux4x1
 Warning (12125): Using design file mod_teste.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: Mod_Teste
 Info (12127): Elaborating entity "Mod_Teste" for the top level hierarchy
-Warning (10034): Output port "HEX0" at mod_teste.sv(9) has no driver
 Warning (10034): Output port "HEX1" at mod_teste.sv(9) has no driver
 Warning (10034): Output port "HEX2" at mod_teste.sv(9) has no driver
 Warning (10034): Output port "HEX3" at mod_teste.sv(9) has no driver
@@ -772,6 +790,7 @@ Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(69): truncated va
 Warning (10230): Verilog HDL assignment warning at LCD_TEST2.v(71): truncated value with size 32 to match size of target (6)
 Info (12128): Elaborating entity "LCD_Controller" for hierarchy "LCD_TEST:MyLCD|LCD_Controller:u0"
 Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(66): truncated value with size 32 to match size of target (5)
+Info (12128): Elaborating entity "decodificador" for hierarchy "decodificador:decod1"
 Info (12128): Elaborating entity "FreqDivisor" for hierarchy "FreqDivisor:divisorD"
 Warning (10230): Verilog HDL assignment warning at FreqDivisor.sv(13): truncated value with size 32 to match size of target (26)
 Info (12128): Elaborating entity "Mux2x1" for hierarchy "Mux2x1:MuxPCSrc"
@@ -797,6 +816,7 @@ Info (12133): Instantiated megafunction "RomInstMem:ROM|altsyncram:altsyncram_co
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mq81.tdf
     Info (12023): Found entity 1: altsyncram_mq81
 Info (12128): Elaborating entity "altsyncram_mq81" for hierarchy "RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated"
+Info (12128): Elaborating entity "ParallelOut" for hierarchy "ParallelOut:Pout"
 Info (12128): Elaborating entity "RamDataMem" for hierarchy "RamDataMem:RAM"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "RamDataMem:RAM|altsyncram:altsyncram_component"
 Info (12130): Elaborated megafunction instantiation "RamDataMem:RAM|altsyncram:altsyncram_component"
@@ -818,6 +838,7 @@ Info (12133): Instantiated megafunction "RamDataMem:RAM|altsyncram:altsyncram_co
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_l0g1.tdf
     Info (12023): Found entity 1: altsyncram_l0g1
 Info (12128): Elaborating entity "altsyncram_l0g1" for hierarchy "RamDataMem:RAM|altsyncram:altsyncram_component|altsyncram_l0g1:auto_generated"
+Info (12128): Elaborating entity "ParallelIn" for hierarchy "ParallelIn:Pin"
 Info (12128): Elaborating entity "ControlUnit" for hierarchy "ControlUnit:control"
 Info (12128): Elaborating entity "RegisterFile" for hierarchy "RegisterFile:register"
 Warning (10855): Verilog HDL warning at RegisterFile.sv(11): initial value for variable registradores should be constant
@@ -863,18 +884,18 @@ Warning (13012): Latch ULA:ula|ULAResult[7] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
 Warning (13012): Latch ULA:ula|ULAResult[6] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
+Warning (13012): Latch ULA:ula|ULAResult[5] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
+Warning (13012): Latch ULA:ula|ULAResult[4] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
+Warning (13012): Latch ULA:ula|ULAResult[3] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
+Warning (13012): Latch ULA:ula|ULAResult[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
 Warning (13012): Latch ULA:ula|ULAResult[1] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
 Warning (13012): Latch ULA:ula|ULAResult[0] has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideNor5
-Warning (13012): Latch ULA:ula|ULAResult[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
-Warning (13012): Latch ULA:ula|ULAResult[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
-Warning (13012): Latch ULA:ula|ULAResult[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
-Warning (13012): Latch ULA:ula|ULAResult[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ControlUnit:control|WideOr5
 Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "LCD_DATA[0]~synth"
     Warning (13010): Node "LCD_DATA[1]~synth"
@@ -885,13 +906,6 @@ Warning (13009): TRI or OPNDRN buffers permanently enabled
     Warning (13010): Node "LCD_DATA[6]~synth"
     Warning (13010): Node "LCD_DATA[7]~synth"
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[6]" is stuck at GND
-    Warning (13410): Pin "HEX0[5]" is stuck at GND
-    Warning (13410): Pin "HEX0[4]" is stuck at GND
-    Warning (13410): Pin "HEX0[3]" is stuck at GND
-    Warning (13410): Pin "HEX0[2]" is stuck at GND
-    Warning (13410): Pin "HEX0[1]" is stuck at GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND
     Warning (13410): Pin "HEX1[6]" is stuck at GND
     Warning (13410): Pin "HEX1[5]" is stuck at GND
     Warning (13410): Pin "HEX1[4]" is stuck at GND
@@ -963,18 +977,10 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (17049): 8 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 22 input pin(s) that do not drive logic
+Warning (21074): Design contains 14 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_27"
     Warning (15610): No output dependent on input pin "KEY[2]"
     Warning (15610): No output dependent on input pin "KEY[3]"
-    Warning (15610): No output dependent on input pin "SW[0]"
-    Warning (15610): No output dependent on input pin "SW[1]"
-    Warning (15610): No output dependent on input pin "SW[2]"
-    Warning (15610): No output dependent on input pin "SW[3]"
-    Warning (15610): No output dependent on input pin "SW[4]"
-    Warning (15610): No output dependent on input pin "SW[5]"
-    Warning (15610): No output dependent on input pin "SW[6]"
-    Warning (15610): No output dependent on input pin "SW[7]"
     Warning (15610): No output dependent on input pin "SW[8]"
     Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "SW[10]"
@@ -986,16 +992,16 @@ Warning (21074): Design contains 22 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[16]"
     Warning (15610): No output dependent on input pin "SW[17]"
     Warning (15610): No output dependent on input pin "UART_RXD"
-Info (21057): Implemented 865 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 890 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 25 input pins
     Info (21059): Implemented 89 output pins
     Info (21060): Implemented 80 bidirectional pins
-    Info (21061): Implemented 640 logic cells
+    Info (21061): Implemented 665 logic cells
     Info (21064): Implemented 31 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 170 warnings
-    Info: Peak virtual memory: 4620 megabytes
-    Info: Processing ended: Wed May 17 16:22:40 2023
-    Info: Elapsed time: 00:00:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 154 warnings
+    Info: Peak virtual memory: 4619 megabytes
+    Info: Processing ended: Thu Jun 01 12:07:02 2023
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
 

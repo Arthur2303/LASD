@@ -3,32 +3,32 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'FreqDivisor:divisorD|LEDG'
-Slack : -14.332
-TNS   : -686.519
-
-Type  : Slow Model Setup 'RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -9.214
-TNS   : -78.719
+Slack : -12.965
+TNS   : -775.225
 
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -7.928
-TNS   : -302.861
+Slack : -10.325
+TNS   : -314.791
+
+Type  : Slow Model Setup 'RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -7.535
+TNS   : -66.035
 
 Type  : Slow Model Hold 'RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -4.930
-TNS   : -40.739
+Slack : -4.923
+TNS   : -41.477
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : -2.536
-TNS   : -3.044
+Slack : -2.499
+TNS   : -2.499
 
 Type  : Slow Model Hold 'FreqDivisor:divisorD|LEDG'
-Slack : 1.558
+Slack : 1.098
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -2.313
-TNS   : -216.186
+Slack : -2.097
+TNS   : -198.350
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
 Slack : -2.000
@@ -36,30 +36,30 @@ TNS   : -224.916
 
 Type  : Slow Model Minimum Pulse Width 'FreqDivisor:divisorD|LEDG'
 Slack : -0.500
-TNS   : -64.000
+TNS   : -72.000
 
 Type  : Fast Model Setup 'FreqDivisor:divisorD|LEDG'
-Slack : -6.269
-TNS   : -307.239
-
-Type  : Fast Model Setup 'RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -3.745
-TNS   : -31.671
+Slack : -5.722
+TNS   : -359.675
 
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -3.626
-TNS   : -103.020
+Slack : -4.725
+TNS   : -110.306
+
+Type  : Fast Model Setup 'RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated|ram_block1a0~porta_address_reg0'
+Slack : -2.987
+TNS   : -26.420
 
 Type  : Fast Model Hold 'RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -2.483
-TNS   : -20.804
+Slack : -2.533
+TNS   : -21.470
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : -1.581
-TNS   : -1.606
+Slack : -1.547
+TNS   : -1.547
 
 Type  : Fast Model Hold 'FreqDivisor:divisorD|LEDG'
-Slack : 0.847
+Slack : 0.510
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
@@ -67,11 +67,11 @@ Slack : -2.000
 TNS   : -224.916
 
 Type  : Fast Model Minimum Pulse Width 'RomInstMem:ROM|altsyncram:altsyncram_component|altsyncram_mq81:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -0.719
-TNS   : -60.860
+Slack : -0.668
+TNS   : -54.532
 
 Type  : Fast Model Minimum Pulse Width 'FreqDivisor:divisorD|LEDG'
 Slack : -0.500
-TNS   : -64.000
+TNS   : -72.000
 
 ------------------------------------------------------------
