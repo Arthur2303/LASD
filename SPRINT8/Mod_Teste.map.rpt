@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Mod_Teste
-Thu Jun 01 12:07:02 2023
+Thu Jun 01 23:44:08 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -67,7 +67,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jun 01 12:07:01 2023           ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 01 23:44:08 2023           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Mod_Teste                                       ;
 ; Top-level Entity Name              ; Mod_Teste                                       ;
@@ -180,39 +180,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                             ; Library ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
-; ParallelOut.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/ParallelOut.sv         ;         ;
-; ParallelIn.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/ParallelIn.sv          ;         ;
-; FreqDivisor.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/FreqDivisor.sv         ;         ;
-; Adder1.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/Adder1.sv              ;         ;
-; ULA.sv                           ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/ULA.sv                 ;         ;
-; RegisterFile.sv                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RegisterFile.sv        ;         ;
-; Mux2x1.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/Mux2x1.sv              ;         ;
-; decodificador.sv                 ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/decodificador.sv       ;         ;
-; LCD_TEST2.v                      ; yes             ; User Verilog HDL File              ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/LCD_TEST2.v            ;         ;
-; LCD_Controller.v                 ; yes             ; User Verilog HDL File              ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/LCD_Controller.v       ;         ;
-; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/ControlUnit.sv         ;         ;
-; PC.sv                            ; yes             ; User SystemVerilog HDL File        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/PC.sv                  ;         ;
-; RomInstMem_init.mif              ; yes             ; User Memory Initialization File    ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RomInstMem_init.mif    ;         ;
-; RomInstMem.v                     ; yes             ; User Wizard-Generated File         ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RomInstMem.v           ;         ;
-; RamDataMem.v                     ; yes             ; User Wizard-Generated File         ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RamDataMem.v           ;         ;
-; mod_teste.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/mod_teste.sv           ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf         ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc  ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc            ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc         ;         ;
-; aglobal130.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc         ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc          ;         ;
-; altrom.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc             ;         ;
-; altram.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc             ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc           ;         ;
-; db/altsyncram_mq81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/db/altsyncram_mq81.tdf ;         ;
-; db/altsyncram_l0g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/db/altsyncram_l0g1.tdf ;         ;
-+----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                  ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                        ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
+; ParallelOut.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/ParallelOut.sv         ;         ;
+; ParallelIn.sv                    ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/ParallelIn.sv          ;         ;
+; FreqDivisor.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/FreqDivisor.sv         ;         ;
+; Adder1.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/Adder1.sv              ;         ;
+; ULA.sv                           ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/ULA.sv                 ;         ;
+; RegisterFile.sv                  ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/RegisterFile.sv        ;         ;
+; Mux2x1.sv                        ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/Mux2x1.sv              ;         ;
+; decodificador.sv                 ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/decodificador.sv       ;         ;
+; LCD_TEST2.v                      ; yes             ; User Verilog HDL File              ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/LCD_TEST2.v            ;         ;
+; LCD_Controller.v                 ; yes             ; User Verilog HDL File              ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/LCD_Controller.v       ;         ;
+; ControlUnit.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/ControlUnit.sv         ;         ;
+; PC.sv                            ; yes             ; User SystemVerilog HDL File        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/PC.sv                  ;         ;
+; RomInstMem_init.mif              ; yes             ; User Memory Initialization File    ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/RomInstMem_init.mif    ;         ;
+; RomInstMem.v                     ; yes             ; User Wizard-Generated File         ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/RomInstMem.v           ;         ;
+; RamDataMem.v                     ; yes             ; User Wizard-Generated File         ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/RamDataMem.v           ;         ;
+; mod_teste.sv                     ; yes             ; Auto-Found SystemVerilog HDL File  ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/mod_teste.sv           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf                    ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc             ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                       ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc                    ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc                    ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                     ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                        ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                        ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; c:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                      ;         ;
+; db/altsyncram_mq81.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/db/altsyncram_mq81.tdf ;         ;
+; db/altsyncram_l0g1.tdf           ; yes             ; Auto-Generated Megafunction        ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/db/altsyncram_l0g1.tdf ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------+
@@ -285,14 +285,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                      ;
-+--------+--------------+---------+--------------+--------------+---------------------------+----------------------------------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance           ; IP Include File                                                ;
-+--------+--------------+---------+--------------+--------------+---------------------------+----------------------------------------------------------------+
-; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Mod_Teste|RamDataMem:RAM ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RamDataMem.v ;
-; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Mod_Teste|RomInstMem:ROM ; C:/Users/ArthurHenrique/Downloads/SPRINT8/SPRINT8/RomInstMem.v ;
-+--------+--------------+---------+--------------+--------------+---------------------------+----------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                 ;
++--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance           ; IP Include File                                                           ;
++--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------------------------------------------------+
+; Altera ; RAM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Mod_Teste|RamDataMem:RAM ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/RamDataMem.v ;
+; Altera ; ROM: 1-PORT  ; 13.0    ; N/A          ; N/A          ; |Mod_Teste|RomInstMem:ROM ; C:/Users/arthu/OneDrive/Documentos/Graduação/P6/LASD/SPRINT8/RomInstMem.v ;
++--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------------------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -728,7 +728,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -738,7 +738,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jun 01 12:06:58 2023
+    Info: Processing started: Thu Jun 01 23:44:00 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Mod_Teste -c Mod_Teste
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file parallelout.sv
@@ -999,9 +999,9 @@ Info (21057): Implemented 890 device resources after synthesis - the final resou
     Info (21061): Implemented 665 logic cells
     Info (21064): Implemented 31 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 154 warnings
-    Info: Peak virtual memory: 4619 megabytes
-    Info: Processing ended: Thu Jun 01 12:07:02 2023
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:03
+    Info: Peak virtual memory: 4623 megabytes
+    Info: Processing ended: Thu Jun 01 23:44:08 2023
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:05
 
 

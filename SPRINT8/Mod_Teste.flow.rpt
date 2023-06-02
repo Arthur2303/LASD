@@ -1,5 +1,5 @@
 Flow report for Mod_Teste
-Thu Jun 01 12:07:17 2023
+Thu Jun 01 23:44:46 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Jun 01 12:07:15 2023           ;
+; Flow Status                        ; Successful - Thu Jun 01 23:44:42 2023           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; Mod_Teste                                       ;
 ; Top-level Entity Name              ; Mod_Teste                                       ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/01/2023 12:06:59 ;
+; Start date & time ; 06/01/2023 23:44:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Mod_Teste           ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 123598315162445.168563201814060 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 180747815254083.168567384106156 ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; ROM: 1-PORT                     ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; RAM: 1-PORT                     ; --            ; --          ; --         ;
 ; IP_TOOL_VERSION                     ; 13.0                            ; --            ; --          ; --         ;
@@ -95,11 +95,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 4609 MB             ; 00:00:03                           ;
-; Fitter                    ; 00:00:10     ; 1.0                     ; 4887 MB             ; 00:00:09                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4552 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4550 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:15                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 4613 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:26     ; 1.0                     ; 4892 MB             ; 00:00:17                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 4554 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4551 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:40     ; --                      ; --                  ; 00:00:25                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,10 +108,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-SDI51H6  ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; DESKTOP-SDI51H6  ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; DESKTOP-SDI51H6  ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-SDI51H6  ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; Arthur           ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; Arthur           ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; Arthur           ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; Arthur           ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
