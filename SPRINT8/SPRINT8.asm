@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Código assembly necessário para a SPRINT8 (Contador de 1's)
 
 addi $s1, $s0, 10	# Número de entrada
