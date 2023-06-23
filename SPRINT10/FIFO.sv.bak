@@ -1,0 +1,43 @@
+`default_nettype none //Comando para desabilitar declaração automática de wires
+module FIFO(    input logic        clk, rst,
+                input logic  [7:0] Data,        
+                input logic  [2:0] Frame,       // Until 7 page frames
+                output logic       Empty, Full, // Define if DataOut is Empty or Full
+                output logic [3:0] Miss,
+                output logic [2:0] Hit,
+                output logic [3:0] PageFault,
+                output logic [7:0] DataOut [7:0]);
+
+
+    logic [3:0] Count = 0;
+    logic [7:0] Registers;
+
+    
+    assign Empty = (Count==0)? 1'b1 : 1'b0; 
+    assign Full  = (Count==8)? 1'b1 : 1'b0; 
+
+        
+    always_ff @( posedge clk ) begin 
+        Count <= 0;
+    end
+
+    always @(posedge clk) begin
+        if(rst) begin
+            Data <= 0;
+        end else begin
+            
+            DataOut <= Data;
+
+            if(Count == 0) begin
+                Frame[0] = Data[0];
+                Count += 1;
+            end else if (Count > 0 && Count < 8 ) begin
+                Frame[Count] = Data[Count];
+                Count += 1;
+            end else Frame[8] = Data[8];
+
+        end
+    end
+
+
+endmodule
