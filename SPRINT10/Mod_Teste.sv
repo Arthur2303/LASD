@@ -1,4 +1,4 @@
-`default_nettype none //Comando para desabilitar declaraÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o automÃƒÆ’Ã‚Â¡tica de wires
+`default_nettype none //Comando para desabilitar declaraÃƒâ€šÃ‚Â£o automÃƒÆ’tica de wires
 /*`include "ControlUnit.sv"
 `include "ULA.sv"
 `include "RegisterFile.sv"
@@ -49,7 +49,6 @@ LCD_TEST MyLCD (
 );
 //---------- modifique a partir daqui --------
 
-	//	SPRINT8
 	logic w_RegDst, w_ALUSrc, w_RegWrite, w_Jump, w_MemtoReg, w_MemWrite, w_Branch, w_BNE, w_BEQ, w_BNEpa, w_PCSrc, w_Z, clk, w_We;
 	logic [2:0] w_wa3, w_ULAControl; 
 	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3, w_PCp1, w_PC, w_RData, w_wd3, w_m1, w_nPC, w_PCBranch, w_MuxToPc, w_RegData;
@@ -61,11 +60,13 @@ LCD_TEST MyLCD (
 		   {w_Jump, w_MemtoReg, w_MemWrite, w_BNE, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
 	assign w_BNEpa = w_BNE & ~w_Z;
 	assign w_BEQ = w_Branch & w_Z;
-	assign w_PCSrc = w_BEQ | w_BNEpa; // AND Seletora do MuxPCSrc
+	assign w_PCSrc = w_BEQ | w_BNEpa; 
 	assign w_PCBranch = w_RD[7:0] + w_PCp1; // Adder Branch
 	assign w_d0x4 = w_PC;
 	
+	// Para o teste do BNE
 	decodificador decod1(.SW( SW[3:0] ), .QQ( HEX0[0:6] )); 
+	decodificador decod2(.SW( SW[7:4] ), .QQ( HEX1[0:6] ));
 	
 	FreqDivisor #(.BordaDeSubida(25000000)) divisorD (.CLOCK_50( CLOCK_50 ), .LEDG( clk )); // 1Hz
 	
@@ -76,6 +77,8 @@ LCD_TEST MyLCD (
 	PC ProgramCounter( .PCin( w_nPC ), .clk( clk ), .rst( KEY[1] ), .PC( w_PC ));
 	
 	Adder1 add(	.In( w_PC ), .Out( w_PCp1 )); 
+	
+	// InstrMemory instruction(	.A( w_PC ), .RD( w_RD )); // Para teste do BNE
 	
 	RomInstMem ROM( .address( w_PC ), .clock( CLOCK_50 ), .q( w_RD ));
 
@@ -88,13 +91,13 @@ LCD_TEST MyLCD (
 	ParallelIn Pin(.DataIn( SW[7:0] ), .Address( w_ULAResultWd3 ), .MemData( w_RData ), .RegData( w_RegData ));
 	
 	ControlUnit control(	.OP( w_RD[31:26] ), .Funct( w_RD[5:0] ), .RegDst( w_RegDst ), .RegWrite( w_RegWrite ), .ULAControl( w_ULAControl ), .ULASrc( w_ALUSrc ),
-							.Jump( w_Jump ), .MemtoReg( w_MemtoReg ), .MemWrite( w_MemWrite ), .Branch( w_Branch ), .BNE( w_BNE ));
+							   .Jump( w_Jump ), .MemtoReg( w_MemtoReg ), .MemWrite( w_MemWrite ), .Branch( w_Branch ), .BNE( w_BNE ));
 
 	
-	RegisterFile #(.N(8)) register(	.wd3(   w_wd3   ), .wa3(  w_wa3  ), .ra1( w_RD[25:21] ), .ra2( w_RD[20:16] ), 
-									.we3( w_RegWrite  ), .clk(   clk  ), .rst(   KEY[1]  ), .rd1(  w_rd1SrcA  ), 
-									.rd2(    w_rd2    ), .S0(	w_d0x0	), .S1(	w_d0x1	), .S2(	w_d0x2	), .S3(	w_d0x3	), 
-									.S4(	w_d1x0	),.S5(	w_d1x1	), .S6(	w_d1x2	), .S7(	w_d1x3	));
+	RegisterFile #(.N(8)) register(	.wd3(   w_wd3    ), .wa3(  w_wa3   ), .ra1( w_RD[25:21] ), .ra2( w_RD[20:16] ), 
+												.we3( w_RegWrite ), .clk(   clk    ), .rst(    KEY[1]   ), .rd1(  w_rd1SrcA  ), 
+												.rd2(    w_rd2   ), .S0 (	w_d0x0  ), .S1 (	  w_d0x1   ), .S2 (	 w_d0x2	  ), 
+												.S3(	w_d0x3	)  , .S4 ( 	w_d1x0  ), .S5 ( 	  w_d1x1	  ), .S6 (	 w_d1x2 	  ),  .S7(	w_d1x3	));
 												
 	
 	Mux2x1 #(.N(8)) MuxULASrc(	.in0( w_rd2 ), .in1( w_RD[7:0] ), .Sel( w_ALUSrc ), .out( w_SrcB ));
