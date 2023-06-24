@@ -11,7 +11,7 @@ module ULA(	input logic [8:0] SrcA,SrcB,
 			3'b010: ULAResult = SrcA + SrcB;    			// Soma 
 			3'b011: ULAResult = ~(SrcA | SrcB); 			// NOR
 			3'b100: ULAResult = SrcA ^ SrcB;					// XOR
-			3'b110: ULAResult = SrcA + (~SrcB) + 1; 		// Subtração
+			3'b110: ULAResult = SrcA + (~SrcB) + 1; 		// SubtraÃ§Ã£o
 			3'b111: ULAResult = SrcA < SrcB;					// SLT
       endcase
 		Z = ULAResult ? 0 : 1;

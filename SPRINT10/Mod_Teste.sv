@@ -58,10 +58,14 @@ LCD_TEST MyLCD (
 	assign LEDG[0] = ~KEY[1];	// RST
 	assign {LEDR[0], LEDR[1], LEDR[2], LEDR[3], LEDR[4], LEDR[5], LEDR[6], LEDR[7], LEDR[8], LEDR[9], LEDR[10]} = 
 		   {w_Jump, w_MemtoReg, w_MemWrite, w_BNE, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
+	
+	// Inicio da implementação do BNE
 	assign w_BNEpa = w_BNE & ~w_Z;
 	assign w_BEQ = w_Branch & w_Z;
 	assign w_PCSrc = w_BEQ | w_BNEpa; 
-	assign w_PCBranch = w_RD[7:0] + w_PCp1; // Adder Branch
+	assign w_PCBranch = w_RD[7:0] + w_PCp1;
+	// Fim da impletação do BNE
+	
 	assign w_d0x4 = w_PC;
 	
 	// Para o teste do BNE
@@ -78,15 +82,15 @@ LCD_TEST MyLCD (
 	
 	Adder1 add(	.In( w_PC ), .Out( w_PCp1 )); 
 	
-	// InstrMemory instruction(	.A( w_PC ), .RD( w_RD )); // Para teste do BNE
+	InstrMemory instruction(	.A( w_PC ), .RD( w_RD )); // Para teste do BNE
 	
-	RomInstMem ROM( .address( w_PC ), .clock( CLOCK_50 ), .q( w_RD ));
+	// RomInstMem ROM( .address( w_PC ), .clock( CLOCK_50 ), .q( w_RD ));
 
 	ParallelOut Pout( .clk( clk ), .we( w_MemWrite ), .wren( w_We ), .RegData( w_rd2 ), .Address( w_ULAResultWd3 ), .DataOut( w_d1x4 ));
 	
 	Mux2x1 #(.N(8)) MuxDDest( .in0( w_ULAResultWd3 ), .in1( w_RegData ), .Sel( w_MemtoReg ), .out( w_wd3 ));
 	
-	RamDataMem RAM( .address( w_ULAResultWd3 ), .data( w_rd2 ), .clock( CLOCK_50 ), .wren( w_We ), .q( w_RData ));
+	// RamDataMem RAM( .address( w_ULAResultWd3 ), .data( w_rd2 ), .clock( CLOCK_50 ), .wren( w_We ), .q( w_RData ));
 
 	ParallelIn Pin(.DataIn( SW[7:0] ), .Address( w_ULAResultWd3 ), .MemData( w_RData ), .RegData( w_RegData ));
 	
