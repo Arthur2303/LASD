@@ -1,4 +1,19 @@
-`default_nettype none //Comando para desabilitar declaração automática de wires
+`default_nettype none //Comando para desabilitar declaraÃƒÆ’Ã‚Â§ÃƒÆ’Ã‚Â£o automÃƒÆ’Ã‚Â¡tica de wires
+/*`include "ControlUnit.sv"
+`include "ULA.sv"
+`include "RegisterFile.sv"
+// `include "RomInstMem.v"
+// `include "RamDataMem.v"
+`include "ParallelOut.sv"
+`include "ParallelIn.sv"
+`include "Mux2x1.sv"
+`include "PC.sv"
+`include "FreqDivisor.sv"
+`include "InstrMemory.sv"
+`include "Decodificador.sv"
+`include "Adder1.sv"
+`include "LCD_TEST.v"
+`include "LCD_Controller.v"*/
 module Mod_Teste (
 //Clocks
 input CLOCK_27, CLOCK_50,
@@ -35,22 +50,24 @@ LCD_TEST MyLCD (
 //---------- modifique a partir daqui --------
 
 	//	SPRINT8
-	logic w_RegDst, w_ALUSrc, w_RegWrite, w_Jump, w_MemtoReg, w_MemWrite, w_Branch, w_PCSrc, w_Z, clk, w_We;
-	logic [2:0] w_wa3, w_ULAControl;
+	logic w_RegDst, w_ALUSrc, w_RegWrite, w_Jump, w_MemtoReg, w_MemWrite, w_Branch, w_BNE, w_BEQ, w_BNEpa, w_PCSrc, w_Z, clk, w_We;
+	logic [2:0] w_wa3, w_ULAControl; 
 	logic [7:0] w_rd1SrcA, w_rd2, w_SrcB, w_ULAResultWd3, w_PCp1, w_PC, w_RData, w_wd3, w_m1, w_nPC, w_PCBranch, w_MuxToPc, w_RegData;
 	logic [31:0] w_RD; 
 	
 	assign LEDG[1] = ~clk;	// CLK
 	assign LEDG[0] = ~KEY[1];	// RST
-	assign {LEDR[0], LEDR[1], LEDR[2], LEDR[3], LEDR[4], LEDR[5], LEDR[6], LEDR[7], LEDR[8], LEDR[9]} = 
-		   {w_Jump, w_MemtoReg, w_MemWrite, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
-	// assign w_d0x4 = w_PC;
-	assign w_PCSrc = w_Z & w_Branch; // AND Seletora do MuxPCSrc
+	assign {LEDR[0], LEDR[1], LEDR[2], LEDR[3], LEDR[4], LEDR[5], LEDR[6], LEDR[7], LEDR[8], LEDR[9], LEDR[10]} = 
+		   {w_Jump, w_MemtoReg, w_MemWrite, w_BNE, w_Branch,  w_ULAControl[0], w_ULAControl[1], w_ULAControl[2], w_ALUSrc, w_RegDst, w_RegWrite};
+	assign w_BNEpa = w_BNE & ~w_Z;
+	assign w_BEQ = w_Branch & w_Z;
+	assign w_PCSrc = w_BEQ | w_BNEpa; // AND Seletora do MuxPCSrc
 	assign w_PCBranch = w_RD[7:0] + w_PCp1; // Adder Branch
+	assign w_d0x4 = w_PC;
 	
 	decodificador decod1(.SW( SW[3:0] ), .QQ( HEX0[0:6] )); 
 	
-	FreqDivisor #(.BordaDeSubida(2500000)) divisorD (.CLOCK_50( CLOCK_50 ), .LEDG( clk )); // 10Hz
+	FreqDivisor #(.BordaDeSubida(25000000)) divisorD (.CLOCK_50( CLOCK_50 ), .LEDG( clk )); // 1Hz
 	
 	Mux2x1 #(.N(8)) MuxPCSrc( .in0( w_PCp1 ), .in1( w_PCBranch ), .Sel( w_PCSrc ), .out( w_m1 ));
 
@@ -71,7 +88,7 @@ LCD_TEST MyLCD (
 	ParallelIn Pin(.DataIn( SW[7:0] ), .Address( w_ULAResultWd3 ), .MemData( w_RData ), .RegData( w_RegData ));
 	
 	ControlUnit control(	.OP( w_RD[31:26] ), .Funct( w_RD[5:0] ), .RegDst( w_RegDst ), .RegWrite( w_RegWrite ), .ULAControl( w_ULAControl ), .ULASrc( w_ALUSrc ),
-							.Jump( w_Jump ), .MemtoReg( w_MemtoReg ), .MemWrite( w_MemWrite ), .Branch( w_Branch ));
+							.Jump( w_Jump ), .MemtoReg( w_MemtoReg ), .MemWrite( w_MemWrite ), .Branch( w_Branch ), .BNE( w_BNE ));
 
 	
 	RegisterFile #(.N(8)) register(	.wd3(   w_wd3   ), .wa3(  w_wa3  ), .ra1( w_RD[25:21] ), .ra2( w_RD[20:16] ), 
